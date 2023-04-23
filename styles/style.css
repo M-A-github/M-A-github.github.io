@@ -1,0 +1,447 @@
+/* Par Mahieu Alexandre */
+
+@font-face{
+	font-family: "Yellowtail-Regular";
+	src: url("Yellowtail-Regular.ttf");
+}
+@font-face{
+	font-family: "NanumMyeongjo-Regular";
+	src: url("NanumMyeongjo-Regular.ttf");
+}
+@font-face{
+	font-family: "NanumMyeongjo-ExtraBold";
+	src: url("NanumMyeongjo-ExtraBold.ttf");
+}
+@font-face{
+	font-family: "Roboto-Regular";
+	src: url("Roboto-Regular.ttf");
+}
+@font-face{
+	font-family: "Roboto-LightItalic";
+	src: url("Roboto-LightItalic.ttf");
+}
+
+
+/* Général */
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 100vh;
+	font-family: "Roboto-Regular", "Times New Roman";
+	background-color: rgba(241, 241, 241, 1.0);
+}
+h2 {
+	font-family: "NanumMyeongjo-ExtraBold", "Times New Roman";
+}
+a {
+	font-family: "Roboto-Regular", "Times New Roman";
+	font-style: normal;
+	text-decoration: none;
+	color: gray;
+}
+a:hover, a:focus {
+	font-style: italic;
+	text-decoration: underline;
+}
+a:active {
+	font-style: italic;
+	text-decoration: underline;	
+}
+img {
+	vertical-align: middle;
+}
+
+
+/* En-tête */
+header {
+	display: flex;
+	flex-direction: column;
+	align-self: stretch;
+	align-items: center;
+	padding-top: 5px;
+	margin-bottom: 10px;
+
+	background-color: rgba(255, 255, 255, 1.0);
+	border-bottom: solid 3px darkred;
+}
+header nav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+header nav div {
+	width: 90%;
+	padding: 2px 0;
+}
+header nav a {
+	width: 70%;
+	text-decoration: none;
+	color: black;
+	font-family: "NanumMyeongjo-Regular", "Times New Roman";
+	font-size: large;
+	text-align: center;
+	transition: 0.3s;
+	padding: 2px 0;
+}
+header nav a:hover, header nav a:focus {
+	background-color: rgba(0, 0, 0, 0.2);
+	color: white;
+	border-radius: 25px 25px;
+}
+header nav a:active {
+	background-color: rgba(0, 0, 0, 0.2);
+	color: white;
+	border-radius: 25px 25px;
+}
+header #titre {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+header #titre a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+header nav #titre h1 {
+	display: none;
+}
+header nav #titre #logo {
+	height: 50px;
+	width: auto;
+}
+header nav #pages {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	border-top: solid 1px darkorange;
+	border-bottom: solid 1px darkorange;
+}
+header nav #pages a {
+	margin: 1px 0;
+	font-size: 25px;
+}
+header nav #userNav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+header nav #userNav a {
+	width: 25%;
+	margin: 0 5px;
+}
+
+
+/* Contenu principal */
+main {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 90%;
+}
+main section {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	margin: 5px;
+	text-align: center;
+}
+main section h2 {
+	margin-left: 15px;
+	text-align: initial;
+}
+main section .element{
+	display: flex;
+	flex-direction: column;
+	margin: 5px 0;
+}
+main section .element div {
+	border: solid 1px lightgray;
+	margin: 5px 0;
+}
+main section .element div a {
+	font-family: "Roboto-Regular", "Times New Roman";
+	text-decoration: none;
+	font-style: normal;
+	color: rgba(0, 0, 0, 1.0);
+}
+main section .element div a p {
+	border-top: solid 1px lightgray;
+	background-color: rgba(200, 200, 200, 1.0);
+}
+main section .element div:hover {
+	border: solid 1px darkorange;
+	box-shadow: 3px 5px 5px darkgray;
+}
+main section .element div a .image {
+	height: auto;
+	width: 250px;
+}
+main#commande {
+	justify-content: center;
+}
+main form fieldset {
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+main form fieldset div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin: 5px 0;
+}
+main form fieldset label {
+	white-space:nowrap;
+}
+main .text {
+	background-color: white;
+	margin-top: 20px;
+	padding: 10px 10px 20px 10px;
+	border-radius: 10px 10px;
+	width: 100%;
+}
+main .text hr {
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+main #apropos {
+	flex-direction: column;
+}
+main #apropos #textPhoto {
+	width: 100%;
+}
+main #apropos #photoProfil {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	border: solid 1px grey;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+main #contact {
+	flex-direction: column;
+}
+main .text .image {
+	max-height: 500px;
+}
+main .text .paragraphe {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+main .text .paragraphe h2 {
+	text-align: center;
+}
+
+
+/* Pied de page */
+footer {
+	align-self: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10px;
+	padding-bottom: 5px;
+	color: rgba(140, 140, 140, 1.0);
+	background-color: rgba(26, 25, 25, 1);
+	border-top: solid 3px darkred;
+}
+footer section {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+}
+footer section h2 {
+	color: rgba(255, 255, 255, 1.0);
+	font-family: "NanumMyeongjo-ExtraBold", "Times New Roman";
+	text-align: center;
+	margin-top: 10px;
+}
+footer section #LienInterne {
+	border-bottom: solid 1px darkorange;
+	text-align: center;
+	padding: 10px 0;
+	transition: 0.3s;
+}
+footer section #LienInterne a {
+	margin: 0 10px;
+	padding: 5px 100px;
+	transition: 0.3s;
+	font-family: "Roboto-Regular", "Times New Roman";
+	font-style: italic;
+	text-decoration: none;
+	color: rgba(144, 144, 144, 1.0);
+}
+footer section #LienInterne a:hover, footer section #LienInterne a:focus {
+	background-color: black;
+	text-decoration: underline;
+	border-radius: 25px 25px;
+}
+footer section #LienInterne a:active {
+	background-color: black;
+	border-radius: 25px 25px;
+}
+footer section #LienInterne #cookie {
+	display: none;
+}
+footer section #LienExterne {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+footer section #LienExterne a {
+	margin: 5px 10px;
+	transition: 0.3s;
+}
+footer section #LienExterne a:hover, footer section #LienExterne a:focus {
+	background-color: black;
+	border-radius: 25%;
+}
+footer section #LienExterne a:active {
+	background-color: black;
+	border-radius: 25%;
+}
+footer section #LienExterne a .footerImg {
+	padding: 5px;
+	height: 50px;
+}
+footer section #copyright {
+	width: 100%;
+	padding-top: 10px;
+	align-self: center;
+	text-align: center;
+	font-size: smaller;
+	font-family: "Roboto-LightItalic", "Times New Roman";
+	color: rgba(144, 144, 144, 1.0);
+	border-top: solid 1px darkorange;
+}
+
+
+/* Version Tablette */
+@media screen and (min-width: 700px) {
+	/* En tête */
+	header nav #pages {
+		flex-direction: row;
+		border-top: inherit;
+		border-bottom: inherit;
+	}
+	header nav #pages a {
+		margin: 0 2px;
+		border-top: solid 1px darkorange;
+		border-bottom: solid 1px darkorange;
+	}
+
+
+	/* Contenu principal */
+	main section {
+		width: 85%;
+	}
+	main #apropos {
+		flex-direction: row;
+	}
+	main .text {
+		flex-direction: row;
+	}
+	main .text .image {
+		max-height: 250px;
+	}
+}
+
+/* Version Ordinateur */
+@media screen and (min-width: 1024px) {
+	/* En tête */
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 2;
+	}
+	header nav {
+		flex-direction: row;
+		max-width: 1100px;
+	}
+	header #titre {
+		align-self: stretch;
+		max-width: 15%;
+		margin: 0 10px;
+	}
+	header #titre a {
+		width: 100%;
+		flex-direction: row;
+		white-space:nowrap;
+	}
+	header nav #titre h1 {
+		display: initial;
+		width: 100%;
+		font-family: "Yellowtail-Regular", "Times New Roman";
+	}
+	header nav #pages {
+		border-left: solid 1px darkorange;
+		border-right: solid 1px darkorange;
+	}
+	header nav #pages a {
+		margin: 0 2px;
+		padding: 5px 2px;
+		border-top: inherit;
+		border-bottom: inherit;
+	}
+	header nav #userNav {
+		max-width: 15%;
+		flex-direction: row;
+	}
+	header nav #userNav a {
+		width: 50%;
+	}
+
+
+	/* Contenue principale */
+	main {
+		margin-top: 75px;
+		width: 70%;
+	}
+	main section .element {
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+	main .text .image {
+		max-height: 500px;
+	}
+
+
+	/* Pied de page */
+	footer {
+		justify-content: center;
+	}
+	footer section {
+		align-self: center;
+		max-width: 1100px;
+	}
+	footer section #LienInterne #cookie {
+		display: initial;
+	}
+	footer section #LienInterne #cookie:hover {
+		cursor: url("../img/cursorCookie.cur"), auto;
+	}
+	footer section #LienInterne #cookie:focus{
+		background-color: initial;
+		border-radius: initial;
+	}
+	footer section #LienInterne #cookie:active {
+		background-color: black;
+		border-radius: 25px 25px;
+	}
+}
