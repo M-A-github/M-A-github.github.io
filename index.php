@@ -1,3 +1,7 @@
+<?php 
+$name = "Mahieu";
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -21,6 +25,7 @@
 
     <main>
       <h2>Test main</h2>
+      <?php echo "$name"; ?>
     </main>
 
     <footer>
