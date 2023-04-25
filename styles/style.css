@@ -56,7 +56,13 @@ a:active {
 img {
 	vertical-align: middle;
 }
-
+.iconImg {
+	padding: 5px;
+	height: 50px;
+}
+#iconDownload > img {
+	height: 30px;
+}
 
 /* En-tête */
 header {
@@ -73,6 +79,7 @@ header {
 header nav {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 }
@@ -81,7 +88,6 @@ header nav div {
 	padding: 2px 0;
 }
 header nav a {
-	width: 70%;
 	text-decoration: none;
 	color: black;
 	font-family: "NanumMyeongjo-Regular", "Times New Roman";
@@ -313,10 +319,6 @@ footer section #LienExterne a:hover, footer section #LienExterne a:focus {
 footer section #LienExterne a:active {
 	background-color: black;
 	border-radius: 25%;
-}
-footer section #LienExterne a .footerImg {
-	padding: 5px;
-	height: 50px;
 }
 footer section #copyright {
 	width: 100%;
