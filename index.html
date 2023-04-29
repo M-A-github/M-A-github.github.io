@@ -12,77 +12,243 @@
 	</head>
 
 	<body>
-		<header>
-			<nav>
-				<a href="./documents/CV-Informatique.pdf" target="_blank" id="titre">
-					<h1>MA-Chaise</h1>
-				</a>
-				
-				<a href="./documents/CV-Informatique.pdf" target="_blank" id="iconDownload">
-					<img class="iconImg" src="images/pdf.png" alt="Télécharger le Curriculum Vitae en PDF">
-				</a>
-			</nav>
-		</header>
-
 		<main>
-			<section id="apropos" class="text">
-				<div>
-					<img src="images/photoProfil.png" alt="Photo de profil" id="photoProfil">
+			<section class="zone" id="zone1">
+				<div id="zonePhotoProfil">
+					<div id="zonePhotoProfilBackground"></div>
+					<img id="photoProfil" src="images/photoProfil.png" alt="Photo de profil">
 				</div>
 
-				<div id="textPhoto" class="centerVertical">
-					<h2>A propos</h2>
-					<hr>
-					<div>
+				<div id="zoneAboutText">
+					<div id="about">
+						<div id="title">
+							<div id="backTitle"></div>
+							<h1>Mahieu Alexandre <span id="age">12/01/1999</span></h1>
+							<span id="subTitle">Informaticien</span>
+						</div>
 						<p>
-							Site créer par Mahieu Alexandre, pour le projet de Web en BAP1 Informatique à la HEH
+							Passionné par l’informatique et tout ce qui touche de près ou de loin à ce domaine.<br>
+							Je suis à la recherche d’expérience professionnelle dans celui-ci.<br>
+							Déterminé à continuer d’en apprendre davantage et en possession d’un permis de conduire
+							depuis juillet 2020, la distance n’est pas un frein pour moi.
 						</p>
+					</div>
+					<div id="contact">
+						<h2>Contact</h2>
 
-						<br><br><br>
-
-						<p>
-							Site à refaire complétement !
-						</p>
+						<span class="zoneCopy">
+							<img class="iconContact" onclick="copyText('mailPerso')" src="./images/Mail_icon.svg" alt="Icon mail personnel">
+							<span onclick="copyText('mailPerso')">Mail personnel : </span>
+							<a href="mailto:mahalex1@gmail.com" id="mailPerso" target="_blank">mahalex1@gmail.com</a>
+							<sup onclick="copyText('mailPerso')" class="copyIcon">
+								<img src="./images/Copy_icon.svg" alt="Icon copy">
+							</sup>
+						</span>
+						<span class="zoneCopy">
+							<img class="iconContact" onclick="copyText('mailPro')" src="./images/MailPro_icon.svg" alt="Icon mail professionnelle">
+							<span onclick="copyText('mailPro')">Mail HEH : </span>
+							<a href="mailto:alexandre.mahieu1@std.heh.be" id="mailPro" target="_blank">alexandre.mahieu1@std.heh.be</a>
+							<sup onclick="copyText('mailPro')" class="copyIcon">
+								<img src="./images/Copy_icon.svg" alt="Icon copy">
+							</sup>
+						</span>
+						<span class="zoneCopy">
+							<img class="iconContact" onclick="copyText('number')" src="./images/Phone_icon.svg" alt="Icon numero de telephone">
+							<span onclick="copyText('number')">Téléphone : </span>
+							<a href="tel:+32497671119" id="number" target="_blank">+32 497 67 11 19</a>
+							<sup onclick="copyText('number')" class="copyIcon">
+								<img src="./images/Copy_icon.svg" alt="Icon copy">
+							</sup>
+						</span>
+						<span class="zoneCopy">
+							<img class="iconContact" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
+							<span onclick="copyText('address')">Addresse : </span>
+							<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="address" target="_blank">
+								<address>Rue de Frameries 428, 7033 Cuesmes</address>
+							</a>
+							<sup onclick="copyText('address')" class="copyIcon">
+								<img src="./images/Copy_icon.svg" alt="Icon copy">
+							</sup>
+						</span>
 					</div>
 				</div>
 			</section>
 
-			<section id="contact" class="text">
-				<h2>Contact</h2>
+			<section class="zone" id="zone2">
+				<h2>FORMATION</h2>
+
+				<div class="zoneFormation">
+					<span class="zoneCopy">
+						<img class="iconContact" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
+						<span onclick="copyText('address')">Addresse : </span>
+						<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="address" target="_blank">
+							<address><acronym title="Avenue">Av.</acronym> Victor Maistriau 8, 7000 Mons</address>
+						</a>
+						<sup onclick="copyText('address')" class="copyIcon">
+							<img src="./images/Copy_icon.svg" alt="Icon copy">
+						</sup>
+					</span>
+					<span>Bachelier en informatique & Systèmes option développement | <acronym title="Haute École en Hainaut">HEH</acronym> - Département des Sciences et technologies</span>
+					<h3>HEH 2021-2023</h3>
+					<p>Bachelier en Informatique & systèmes orientation réseaux & télécommunications avec option développement</p>
+				</div>
+				
+				<div class="zoneFormation">
+					<span class="zoneCopy">
+						<img class="iconContact" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
+						<span onclick="copyText('address')">Addresse : </span>
+						<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="address" target="_blank">
+							<address><acronym title="Boulevard">Bd</acronym> Initialis 18, 7000 Mons</address>
+						</a>
+						<sup onclick="copyText('address')" class="copyIcon">
+							<img src="./images/Copy_icon.svg" alt="Icon copy">
+						</sup>
+					</span>
+					<span>TechnoCampus - Mons</span>
+					<h3>Formation à « Technocampus » :</h3>
+					<p>Instrumentation/Régulation en mai 2019</p>
+				</div>
+
+				<div class="zoneFormation">
+					<span class="zoneCopy">
+						<img class="iconContact" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
+						<span onclick="copyText('address')">Addresse : </span>
+						<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="address" target="_blank">
+							<address>Rue Saint-Luc 3, 7000 Mons</address>
+						</a>
+						<sup onclick="copyText('address')" class="copyIcon">
+							<img src="./images/Copy_icon.svg" alt="Icon copy">
+						</sup>
+					</span>
+					<span><acronym title="Certificat d'Enseignement Secondaire Supérieur">CESS</acronym> & Electricien Automaticien & ElectroMecanicien</span>
+					<span>Instituts Saint-Luc Mons</span>
+					<h3>Institut Technique Saint-Luc Mons 2012-2019</h3>
+					Obtention :
+					<ul>
+						<li>Certificat d'enseignement secondaire supérieur (CESS) en juin 2019</li>
+						<li>Certificat de Qualification en Électricien Automaticien en juin 2019</li>
+						<li>Certificat d’étude secondaire du deuxième degré (CE2D) en juin 2017</li>
+					</ul>
+
+					<p>
+						Électricien Automaticien (2017-2019)<br>
+						Électro-Mécanicien (2012-2017)
+					</p>
+				</div>
+
+				<div class="zoneFormation">
+					<span class="zoneCopy">
+						<img class="iconContact" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
+						<span onclick="copyText('address')">Addresse : </span>
+						<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="address" target="_blank">
+							<address><acronym title="Avenue">Av.</acronym> Victor Maistriau 11, 7000 Mons</address>
+						</a>
+						<sup onclick="copyText('address')" class="copyIcon">
+							<img src="./images/Copy_icon.svg" alt="Icon copy">
+						</sup>
+					</span>
+					<span><acronym title="Certificat d'Études de Base">CEB</acronym> | Athénée Royal Marguerite Bervoets</span>
+					<h3>Athénée Royal Marguerite Bervoets Mons 2003-2012</h3>
+					Obtention du Certificat d’étude de base (CEB) en juin 2012
+				</div>
+
+				<h2>COMPÉTENCES</h2>
 				<hr>
-				<p>
-					Pour me contacter :<br>
-					Mail personnel : <a href="mailto:mahalex1@gmail.com">mahalex1@gmail.com</a><br>
-					Mail HEH : <a href="mailto:alexandre.mahieu1@std.heh.be">alexandre.mahieu1@std.heh.be</a><br>
-					Téléphone : <a href="tel:+32497671119">+32 497 67 11 19</a><br>
-					Addresse : <a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" target="_blank">Rue de Frameries 428, 7033 Cuesmes</a>
-				</p>
+				Connaissances informatiques :
+				<ul>
+					<li>Langage de Programmation :
+						<ul>
+							<li>Python</li>
+							<li>Java</li>
+							<li>HTML&CSS</li>
+							<li>C#</li>
+							<li>C</li>
+							<li>PHP</li>
+							<li>SQL</li>
+							<li>JavaScript</li>
+						</ul>
+					</li>
+					<li>Logiciel 3D :
+						<ul>
+							<li>AutoCAD</li>
+							<li>Schémaplic</li>
+							<li>Connected Components Workbench</li>
+							<li>Trikker</li>
+						</ul>
+					</li>
+					<li>Autodidacte :
+						<ul>
+							<li>Logiciel suite office</li>
+						</ul>
+					</li>
+				</ul>
+
+				Langue :				
+				<span>
+					<meter value="9" min="0" max="10"></meter>
+					Français
+				</span>
+				<span>
+					<meter value="3" min="0" max="10"></meter>
+					Anglais
+				</span>
+				<span>
+					<meter value="1" min="0" max="10"></meter>
+					Néelandais
+				</span>
+			</section>
+
+			<section class="zone" id="zone3">
+				<h2>PARCOURS PROFESSIONNEL (JOBS ETUDIANT)</h2>
+				<hr>
+				<ul>
+					<li>
+						Wallonie familles santé handicap : Secrétariat + Informatique<br>
+						Juillet 2020 & 2021 & 2022
+					</li>
+					<li>
+						Stage à l'ascenseur funiculaire de Strépy-Thieu<br>
+						Mai 2019
+					</li>
+					<li>
+						Holcim Obourg : Electricien + Laboratoire Béton<br>
+						Juillet 2018 & 2019
+					</li>
+					<li>
+						FAMIFED : Secrétariat + Manutention<br>
+						Décembre 2017 & Juillet 2017
+					</li>
+					<li>
+						SPF Santé Public : Secrétariat<br>
+						Juillet 2016
+					</li>
+				</ul>
+
+				<h2>LOISIRS</h2>
+				<hr>
+				Photographie<br>
+				Vélo (VTT)<br>
+				Musique<br>
+				Manga
 			</section>
 		</main>
 
 		<footer>
 			<section>
 				<h2>Complément</h2>
-				<div id="LienInterne">
-					<a href="#contact">Contact</a>
-					<a href="#cookie" id="cookie">Cookie</a>
-				</div>
 
 				<div id="LienExterne">
-					<a href="https://facebook.com/" target="_blank">
-						<img class="iconImg" src="images/facebook.svg" alt="Lien vers Facebook">
-					</a>
-					<a href="https://youtube.com/" target="_blank">
-						<img class="iconImg" src="images/youtube.svg" alt="Lien vers Youtube">
-					</a>
-					<a href="https://instagram.com/" target="_blank">
-						<img class="iconImg" src="images/instagram.svg" alt="Lien vers Instagram">
-					</a>
-					<a href="https://twitter.com/" target="_blank">
-						<img class="iconImg" src="images/twitter.svg" alt="Lien vers Twitter">
-					</a>
 					<a href="https://www.linkedin.com/in/alexandre-mahieu-ma-visty" target="_blank">
-						<img class="iconImg" src="images/linkedin.svg" alt="Lien vers LinkedIn">
+						<img class="iconImg" src="images/LinkedIn_icon.svg" alt="Lien vers LinkedIn">
+					</a>
+					<a href="https://github.com/MA-Visty" target="_blank">
+						<img class="iconImg" src="images/Github_icon.svg" alt="Lien vers Github">
+					</a>
+					<a href="https://www.instagram.com/mahieu_alexandre/" target="_blank">
+						<img class="iconImg" src="images/Instagram_icon.svg" alt="Lien vers Instagram">
+					</a>
+					<a href="./documents/CV-Informatique.pdf" target="_blank">
+						<img class="iconImg" src="images/PDF_icon.svg" alt="Télécharger le Curriculum Vitae en PDF">
 					</a>
 				</div>
 
@@ -90,10 +256,27 @@
 					<p>
 						&copy;2023 - Mahieu Alexandre<br>
 						HEH - BAP2<br>
-						Informatique - option Développement - Groupe 1
+						Informatique - option Développement
 					</p>
 				</div>
 			</section>
 		</footer>
+
+		<div id="zonePopup">
+			<div id="popup">
+				<div id="popupText">
+					Copier !
+				</div>
+			</div>
+		</div>
+
+		<div id="zoneArrow">
+			<div id="arrow">
+				<img id="imgArrow" src="./images/Arrows_icon.svg" alt="Icon flêche">
+			</div>
+		</div>
+
+		<script src="./scripts/jquery-3.3.1.min.js"></script>
+		<script src="./scripts/script.js"></script>
 	</body>
 </html>
