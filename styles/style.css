@@ -100,8 +100,8 @@ a:active, a:focus {
 	animation: backProfilAnim 1s ease, backProfilGradientAnim 15s ease infinite;
 }
 #photoProfil {
-	margin: 15px 0;
-	height: 200px;
+	margin-top: 10px;
+	height: 175px;
 	display: block;
 	border-radius: 50%;
 	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.15);
@@ -319,13 +319,14 @@ a:active, a:focus {
 	padding: 5px 0px;
 	user-select: none;
 	cursor: pointer;
+	font-size: 1.1em;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
-.zoneCopy .iconContact {
+.iconContact {
 	margin-right: 5px;
-	width: 2em;
+	width: 1.5em;
 	display: inline;
 	vertical-align: middle;
 }
