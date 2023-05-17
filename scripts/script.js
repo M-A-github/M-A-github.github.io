@@ -2,7 +2,7 @@ function copyText(element) {
 	navigator.clipboard.writeText($("#"+element)[0].text);
 	// Faire une info bull pour le copy
 	$("#zonePopup").css("display", "none");
-	//$("#popupText").html(element + " est copié !");
+	$("#popupText").html(element + " est copié !");
 	
 	/*
 	$("#popupText").css("transform", "translateY(50px)");

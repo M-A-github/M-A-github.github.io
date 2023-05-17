@@ -1,0 +1,10 @@
+Faire le site en css pure
+
+Ajouter des annimations JS
+	- lazyload
+	- time line
+	- card / slider
+
+Faire le print css
+
+

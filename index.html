@@ -8,67 +8,98 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<link rel="icon" type="image/png" href="images/logo.png">
 		<link rel="stylesheet" href="styles/style.css">
-		<title>Mahieu Alexandre | Curriculum Vitae</title>
+		<link rel="stylesheet" href="styles/stylePrint.css">
+		<title>Alexandre Mahieu | Curriculum Vitae</title>
 	</head>
 
 	<body>
 		<main>
 			<section class="zone" id="zone1">
 				<div id="zonePhotoProfil">
-					<div id="zonePhotoProfilBackground"></div>
-					<img id="photoProfil" src="images/photoProfil.png" alt="Photo de profil">
+					<div id="photoProfilBackground"></div>
+					<img id="photoProfil" draggable="false" src="images/photoProfil.png" alt="Photo de profil">
 				</div>
 
-				<div id="zoneAboutText">
-					<div id="about">
-						<div id="title">
+				<div id="textZone1">
+					<div id="zoneTitle">
+						<span id="title">
+							<h1>Alexandre Mahieu</h1>
+							<span id="age">( 12/01/1999 )</span>
 							<div id="backTitle"></div>
-							<h1>Mahieu Alexandre <span id="age">12/01/1999</span></h1>
-							<span id="subTitle">Informaticien</span>
-						</div>
-						<p>
-							Passionné par l’informatique et tout ce qui touche de près ou de loin à ce domaine.<br>
-							Je suis à la recherche d’expérience professionnelle dans celui-ci.<br>
-							Déterminé à continuer d’en apprendre davantage et en possession d’un permis de conduire
-							depuis juillet 2020, la distance n’est pas un frein pour moi.
-						</p>
+						</span>
+						<span id="subTitle">Informaticien</span>
 					</div>
-					<div id="contact">
+	
+					<div id="about">
+						<span id="aboutP1">
+							Passionné par l'informatique et tout ce qui touche de près ou de loin à ce domaine.
+						</span>
+						<!--
+						<span>
+							Je suis actuellement en 2éme Bachelier professionnalisant en informatique & systèmes orientation réseaux & télécommunications
+							avec option développement.
+						</span>
+						-->
+						<span id="aboutP2">
+							Je suis à la recherche d'expérience professionnelle dans celui-ci.
+						</span>
+						<span id="aboutP3">
+							Déterminé à continuer d'en apprendre davantage et en possession d'un permis de conduire
+							depuis juillet 2020, la distance n'est pas un frein pour moi.
+						</span>
+					</div>
+	
+					<div id="zoneContact">
 						<h2>Contact</h2>
-
-						<span class="zoneCopy">
-							<img class="iconContact" onclick="copyText('mailPerso')" src="./images/Mail_icon.svg" alt="Icon mail personnel">
+	
+						<span class="zoneCopy" id="copyP1">
+							<img class="iconContact" draggable="false" onclick="copyText('mailPerso')" src="./images/Mail_icon.svg" alt="Icon mail personnel">
 							<span onclick="copyText('mailPerso')">Mail personnel : </span>
 							<a href="mailto:mahalex1@gmail.com" id="mailPerso" target="_blank">mahalex1@gmail.com</a>
 							<sup onclick="copyText('mailPerso')" class="copyIcon">
-								<img src="./images/Copy_icon.svg" alt="Icon copy">
+								<img draggable="false" src="./images/Copy_icon.svg" alt="Icon copy">
 							</sup>
 						</span>
-						<span class="zoneCopy">
-							<img class="iconContact" onclick="copyText('mailPro')" src="./images/MailPro_icon.svg" alt="Icon mail professionnelle">
+						<span class="zoneCopy" id="copyP2">
+							<img class="iconContact" draggable="false" onclick="copyText('mailPro')" src="./images/MailPro_icon.svg" alt="Icon mail professionnelle">
 							<span onclick="copyText('mailPro')">Mail HEH : </span>
 							<a href="mailto:alexandre.mahieu1@std.heh.be" id="mailPro" target="_blank">alexandre.mahieu1@std.heh.be</a>
 							<sup onclick="copyText('mailPro')" class="copyIcon">
-								<img src="./images/Copy_icon.svg" alt="Icon copy">
+								<img draggable="false" src="./images/Copy_icon.svg" alt="Icon copy">
 							</sup>
 						</span>
-						<span class="zoneCopy">
-							<img class="iconContact" onclick="copyText('number')" src="./images/Phone_icon.svg" alt="Icon numero de telephone">
+						<span class="zoneCopy" id="copyP3">
+							<img class="iconContact" draggable="false" onclick="copyText('number')" src="./images/Phone_icon.svg" alt="Icon numero de telephone">
 							<span onclick="copyText('number')">Téléphone : </span>
 							<a href="tel:+32497671119" id="number" target="_blank">+32 497 67 11 19</a>
 							<sup onclick="copyText('number')" class="copyIcon">
-								<img src="./images/Copy_icon.svg" alt="Icon copy">
+								<img draggable="false" src="./images/Copy_icon.svg" alt="Icon copy">
 							</sup>
 						</span>
-						<span class="zoneCopy">
-							<img class="iconContact" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
+						<span class="zoneCopy" id="copyP4">
+							<img class="iconContact" draggable="false" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
 							<span onclick="copyText('address')">Addresse : </span>
 							<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="address" target="_blank">
 								<address>Rue de Frameries 428, 7033 Cuesmes</address>
 							</a>
 							<sup onclick="copyText('address')" class="copyIcon">
-								<img src="./images/Copy_icon.svg" alt="Icon copy">
+								<img draggable="false" src="./images/Copy_icon.svg" alt="Icon copy">
 							</sup>
+						</span>
+	
+						<span id="lienExterne">
+							<a href="https://www.linkedin.com/in/alexandre-mahieu-ma-visty" target="_blank">
+								<img class="iconImg" src="images/LinkedIn_icon.svg" alt="Lien vers LinkedIn">
+							</a>
+							<a href="https://github.com/MA-Visty" target="_blank">
+								<img class="iconImg" src="images/Github_icon.svg" alt="Lien vers Github">
+							</a>
+							<a href="https://www.instagram.com/mahieu_alexandre/" target="_blank">
+								<img class="iconImg" src="images/Instagram_icon.svg" alt="Lien vers Instagram">
+							</a>
+							<a href="./documents/CV-Informatique.pdf" target="_blank">
+								<img class="iconImg" src="images/PDF_icon.svg" alt="Télécharger le Curriculum Vitae en PDF">
+							</a>
 						</span>
 					</div>
 				</div>
@@ -79,7 +110,7 @@
 
 				<div class="zoneFormation">
 					<span class="zoneCopy">
-						<img class="iconContact" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
+						<img class="iconContact" draggable="false" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
 						<span onclick="copyText('address')">Addresse : </span>
 						<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="address" target="_blank">
 							<address><acronym title="Avenue">Av.</acronym> Victor Maistriau 8, 7000 Mons</address>
@@ -95,7 +126,7 @@
 				
 				<div class="zoneFormation">
 					<span class="zoneCopy">
-						<img class="iconContact" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
+						<img class="iconContact" draggable="false" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
 						<span onclick="copyText('address')">Addresse : </span>
 						<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="address" target="_blank">
 							<address><acronym title="Boulevard">Bd</acronym> Initialis 18, 7000 Mons</address>
@@ -111,7 +142,7 @@
 
 				<div class="zoneFormation">
 					<span class="zoneCopy">
-						<img class="iconContact" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
+						<img class="iconContact" draggable="false" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
 						<span onclick="copyText('address')">Addresse : </span>
 						<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="address" target="_blank">
 							<address>Rue Saint-Luc 3, 7000 Mons</address>
@@ -138,7 +169,7 @@
 
 				<div class="zoneFormation">
 					<span class="zoneCopy">
-						<img class="iconContact" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
+						<img class="iconContact" draggable="false" onclick="copyText('address')" src="./images/Map_icon.svg" alt="Icon localisation">
 						<span onclick="copyText('address')">Addresse : </span>
 						<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="address" target="_blank">
 							<address><acronym title="Avenue">Av.</acronym> Victor Maistriau 11, 7000 Mons</address>
@@ -152,8 +183,33 @@
 					Obtention du Certificat d’étude de base (CEB) en juin 2012
 				</div>
 
+				<h2>PARCOURS PROFESSIONNEL (JOBS ETUDIANT)</h2>
+				<ul>
+					<li>
+						Wallonie familles santé handicap : Secrétariat + Informatique<br>
+						Juillet 2020 & 2021 & 2022
+					</li>
+					<li>
+						Stage à l'ascenseur funiculaire de Strépy-Thieu<br>
+						Mai 2019
+					</li>
+					<li>
+						Holcim Obourg : Electricien + Laboratoire Béton<br>
+						Juillet 2018 & 2019
+					</li>
+					<li>
+						FAMIFED : Secrétariat + Manutention<br>
+						Décembre 2017 & Juillet 2017
+					</li>
+					<li>
+						SPF Santé Public : Secrétariat<br>
+						Juillet 2016
+					</li>
+				</ul>
+			</section>
+
+			<section class="zone" id="zone3">
 				<h2>COMPÉTENCES</h2>
-				<hr>
 				Connaissances informatiques :
 				<ul>
 					<li>Langage de Programmation :
@@ -196,36 +252,8 @@
 					<meter value="1" min="0" max="10"></meter>
 					Néelandais
 				</span>
-			</section>
-
-			<section class="zone" id="zone3">
-				<h2>PARCOURS PROFESSIONNEL (JOBS ETUDIANT)</h2>
-				<hr>
-				<ul>
-					<li>
-						Wallonie familles santé handicap : Secrétariat + Informatique<br>
-						Juillet 2020 & 2021 & 2022
-					</li>
-					<li>
-						Stage à l'ascenseur funiculaire de Strépy-Thieu<br>
-						Mai 2019
-					</li>
-					<li>
-						Holcim Obourg : Electricien + Laboratoire Béton<br>
-						Juillet 2018 & 2019
-					</li>
-					<li>
-						FAMIFED : Secrétariat + Manutention<br>
-						Décembre 2017 & Juillet 2017
-					</li>
-					<li>
-						SPF Santé Public : Secrétariat<br>
-						Juillet 2016
-					</li>
-				</ul>
 
 				<h2>LOISIRS</h2>
-				<hr>
 				Photographie<br>
 				Vélo (VTT)<br>
 				Musique<br>
@@ -233,50 +261,27 @@
 			</section>
 		</main>
 
-		<footer>
-			<section>
-				<h2>Complément</h2>
-
-				<div id="LienExterne">
-					<a href="https://www.linkedin.com/in/alexandre-mahieu-ma-visty" target="_blank">
-						<img class="iconImg" src="images/LinkedIn_icon.svg" alt="Lien vers LinkedIn">
-					</a>
-					<a href="https://github.com/MA-Visty" target="_blank">
-						<img class="iconImg" src="images/Github_icon.svg" alt="Lien vers Github">
-					</a>
-					<a href="https://www.instagram.com/mahieu_alexandre/" target="_blank">
-						<img class="iconImg" src="images/Instagram_icon.svg" alt="Lien vers Instagram">
-					</a>
-					<a href="./documents/CV-Informatique.pdf" target="_blank">
-						<img class="iconImg" src="images/PDF_icon.svg" alt="Télécharger le Curriculum Vitae en PDF">
-					</a>
-				</div>
-
-				<div id="copyright">
-					<p>
-						&copy;2023 - Mahieu Alexandre<br>
-						HEH - BAP2<br>
-						Informatique - option Développement
-					</p>
-				</div>
-			</section>
-		</footer>
-
-		<div id="zonePopup">
+		<div id="zonePopup" class="zoneSup">
 			<div id="popup">
-				<div id="popupText">
-					Copier !
-				</div>
+				Copier !
 			</div>
 		</div>
 
-		<div id="zoneArrow">
+		<div id="zoneArrow" class="zoneSup">
 			<div id="arrow">
-				<img id="imgArrow" src="./images/Arrows_icon.svg" alt="Icon flêche">
+				<img id="imgArrow" draggable="false" src="./images/Arrows_icon.svg" alt="Icon flêche">
+			</div>
+		</div>
+
+		<div id="zoneCopyright" class="zoneSup">
+			<div id="copyright">
+				<span>&copy;2023 - Mahieu Alexandre</span>
+				<span>HEH - BAP2</span>
+				<span>Informatique - option Développement</span>
 			</div>
 		</div>
 
 		<script src="./scripts/jquery-3.3.1.min.js"></script>
-		<script src="./scripts/script.js"></script>
+		<!-- <script src="./scripts/script.js"></script> -->
 	</body>
 </html>

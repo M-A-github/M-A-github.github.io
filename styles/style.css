@@ -41,326 +41,537 @@
 	src: url("Roboto-LightItalic.ttf");
 }
 
-/* ============================== Reset CSS ============================== */
+/* ========================== Général ========================= */
 * {
 	margin: 0;
 	padding: 0;
 }
-
-/* ========================== Version Ordinateur ========================= */
 body {
 	min-height: 100vh;
-
 	display: flex;
 	flex-direction: column;
 	overflow-x: hidden;
-	
-	/*overflow: hidden;*/
 	color: var(--color1);
-	font-family: "Roboto-Regular", "Times New Roman";
-	background-color: var(--BackColor);
+	background-color: var(--color5);
 }
 a {
 	color: var(--color3);
-	font-style: normal;
 	text-decoration: none;
 }
 a:hover {
-	font-style: italic;
 	color: var(--color4);
 }
 a:active, a:focus {
-	font-style: italic;
+	scale: 0.95;
 	color: var(--color4);
+	opacity: 0.9;
 }
-
 .zone {
 	width: 100%;
 	min-height: 100vh;
 }
+
+
+/* ========================== Version Téléphone ========================= */
 #zone1 {
 	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 }
+/* ~~~~~~~~~~ Photo de profil ~~~~~~~~~~ */
 #zonePhotoProfil {
-	width: 35%;
+	width: 100%;
 	position: relative;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-#zonePhotoProfilBackground {
+#photoProfilBackground {
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	z-index: -1;
-
 	background-color: var(--color1);
-	clip-path: polygon(30% 0, 15% 30%, 15% 70%, 30% 100%, 100% 100%, 100% 85%, 50% 50%, 100% 15%, 100% 0);
-	animation: PopupBackAnim 1s ease infinite;
+	background: linear-gradient(-75deg, var(--color1), var(--color2), var(--color4), var(--color3));
+	background-size: 400% 400%;
+	clip-path: polygon(0% 70%, 30% 85%, 70% 85%, 100% 70%, 100% 0%, 85% 0%, 50% 35%, 15% 0%, 0% 0%);
+	animation: backProfilAnim 1s ease, backProfilGradientAnim 15s ease infinite;
 }
 #photoProfil {
+	margin: 15px 0;
+	height: 200px;
 	display: block;
-	height: 350px;
 	border-radius: 50%;
 	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.15);
+	transform: translateY(-5px);
+	animation: photoProfilAnim 1s ease;
 }
-#zoneAboutText {
-	margin-left: 50px;
+@keyframes backProfilGradientAnim {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes backProfilAnim {
+	from {
+		transform: translateY(-150%);
+	}
+	to {
+		transform: translateY(0%);
+	}
+}	
+@keyframes photoProfilAnim {
+	from {
+		transform: translateY(-300%) translateY(0px);
+	}
+	to {
+		transform: translateY(0%) translateY(-5px);
+	}
+}
+/* ~~~~~~~~~~ Titre ~~~~~~~~~~ */
+#textZone1 {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-between;
 }
-#about #title {
+#zoneTitle {
 	display: flex;
 	flex-direction: column;
+}
+#title {
 	position: relative;
-	letter-spacing: 2px;
+	display: flex;
+	flex-direction: row;
 }
-#about #title #backTitle {
-	position: absolute;
-	width: 115%;
-	height: 62%;
-	right: -15%;
-	z-index: -2;
-	border-radius: 0 0 0 0;
-	background-color: var(--color3);
-}
-#about #title h1 {
+#title h1 {
+	padding: 5px 10px;
+	flex: 1;
 	text-transform: uppercase;
-	position: relative;
 	text-align: center;
-	font-size: xx-large;
+	font-size: 2em;
+	animation: titleAnim 1.75s ease;
 }
-#about #title h1 #age {
-	position: absolute;
-	margin-left: 10px;
-	bottom: 0;
+#age {
+	margin: 0 5px 5px 0;
 	opacity: 0.85;
-	font-size: medium;
+	display: none;
+	align-self: flex-end;
 }
-#about #title #subTitle {
-	width: 69%;
+#subTitle {
+	padding-right: 5%;
 	text-align: right;
 	text-transform: uppercase;
-	font-size: larger;
+	font-size: 1.05em;
 	font-family: initial;
+	letter-spacing: 2px;
+	animation: subtitleAnim 1.75s ease;
 }
-#about p {
-	margin: 25px 0 0 50px;
+#backTitle {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 }
-#contact {
+#backTitle::before {
+	content: " ";
+	width: 51%;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	background-color: var(--color3);
+	animation: backTitleLeftAnim 1s ease;
+}
+#backTitle::after {
+	content: " ";
+	width: 51%;
+	height: 100%;
+	right: 0;
+	position: absolute;
+	background-color: var(--color3);
+	animation: backTitleRightAnim 1s ease;
+}
+@keyframes titleAnim {
+	0%, 50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes subtitleAnim {
+	0%, 50% {
+		transform: rotate3d(1, 0, 0, 90deg);
+		opacity: 0;
+	}
+	100% {
+		transform: rotate3d(0, 0, 0, 0deg);
+		opacity: 1;
+	}
+}
+@keyframes backTitleLeftAnim {
+	from {
+		left: -76%;
+	}
+	to {
+		left: 0;
+	}
+}
+@keyframes backTitleRightAnim {
+	from {
+		right: -76%;
+	}
+	to {
+		right: 0;
+	}
+}
+/* ~~~~~~~~~~ About ~~~~~~~~~~ */
+#about {
+	flex: 1;
+	margin: 2% 5%;
+	display: flex;
+	flex-direction: column;
+	border-left: 25px solid var(--color1);
+	border-image: linear-gradient(0deg, var(--color5) 0%, var(--color1) 100%) 1;
+	animation: noBorderAboutAnim 1.5s ease, borderAboutAnim 1.35s 1.5s ease;
+}
+#about span {
+	margin-left: 3%;
+	padding: 1% 0;
+	font-size: 1.2em;
+}
+#aboutP1 {
+	animation: aboutAnim 2s ease;
+}
+#aboutP2 {
+	animation: aboutAnim 2.5s ease;
+}
+#aboutP3 {
+	animation: aboutAnim 3s ease;
+}
+@keyframes noBorderAboutAnim {
+	from {
+		border-left: 25px solid var(--color5);
+		border-image: initial;
+	}
+	to {
+		border-left: 25px solid var(--color5);
+		border-image: initial;
+	}
+}
+@keyframes borderAboutAnim {
+	0% {
+		border-image: linear-gradient(0deg, var(--color5) 100%, var(--color1) 0%) 1 100%;
+	}
+	15% {
+		border-image: linear-gradient(0deg, var(--color5) 90%, var(--color1) 10%) 1 100%;
+	}
+	30% {
+		border-image: linear-gradient(0deg, var(--color5) 75%, var(--color1) 25%) 1 100%;
+	}
+	45% {
+		border-image: linear-gradient(0deg, var(--color5) 60%, var(--color1) 40%) 1 100%;
+	}
+	60% {
+		border-image: linear-gradient(0deg, var(--color5) 45%, var(--color1) 55%) 1 100%;
+	}
+	75% {
+		border-image: linear-gradient(0deg, var(--color5) 30%, var(--color1) 70%) 1 100%;
+	}
+	90% {
+		border-image: linear-gradient(0deg, var(--color5) 15%, var(--color1) 85%) 1 100%;
+	}
+	100% {
+		border-image: linear-gradient(0deg, var(--color5) 0%, var(--color1) 100%) 1 100%;
+	}
+}
+@keyframes aboutAnim {
+	from {
+		z-index: -2;
+		transform: translateX(300%);
+	}
+	to {
+		z-index: -2;
+		transform: translateX(0%);
+	}
+}
+/* ~~~~~~~~~~ Contact ~~~~~~~~~~ */
+#zoneContact {
+	margin-top: 5%;
 	display: flex;
 	flex-direction: column;
 }
-#contact h2 {
-	border-bottom: 1px solid var(--color3);
+#zoneContact h2 {
+	margin-left: 5%;
+	animation: copyPartAnim 2s ease;
 }
 .zoneCopy {
-	margin-left: 50px;
+	margin-left: 10%;
+	padding: 5px 0px;
 	user-select: none;
 	cursor: pointer;
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-start;
 	align-items: center;
-	font-size: 1.8em;
 }
 .zoneCopy .iconContact {
 	margin-right: 5px;
 	width: 2em;
-	height: 2em;
 	display: inline;
 	vertical-align: middle;
-}
-.zoneCopy a {
-	margin-left: 7px;
 }
 .zoneCopy sup {
 	display: inline;
 	vertical-align: top;
 	visibility: hidden;
 }
+/* EN JAVASCRIPT
 .zoneCopy:hover sup{
 	visibility: visible;
 }
+*/
 .zoneCopy sup img {
 	margin-left: 5px;
 	opacity: 1;
-	height: 0.9em;
+	height: 5px;
 	vertical-align: top;
 }
 .zoneCopy sup:hover img {
-	height: 1.1em;
+	height: 5px;
 }
 .zoneCopy span:active ~ sup img, .zoneCopy span:focus ~ sup img, .zoneCopy sup:active img, .zoneCopy sup:focus img {
 	opacity: 0.25;
-	height: 1em;
+	height: 5px;
+}
+#copyP1 {
+	animation: copyPartAnim 1.8s ease;
+}
+#copyP2 {
+	animation: copyPartAnim 1.7s ease;
+}
+#copyP3 {
+	animation: copyPartAnim 1.6s ease;
+}
+#copyP4 {
+	animation: copyPartAnim 1.5s ease;
+}
+@keyframes copyPartAnim {
+	from {
+		z-index: -2;
+		transform: translateX(-100%);
+	}
+	to {
+		z-index: -2;
+		transform: translateX(0%);
+	}
 }
 
-#zonePopup {
-	user-select: none;
-	z-index: 10;
+#lienExterne {
+	margin-bottom: 0px;
+	padding: 5px 0px;
+	align-self: center;
 	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-color: var(--color1);
+	animation: backLienExtAnim 2s ease;
+}
+#lienExterne a:hover .iconImg {
+	border-radius: 5px;
+	background-color: var(--color5);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4), 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+#lienExterne a:active .iconImg, #lienExterne a:focus .iconImg{
+	border-radius: 5px;
+	background-color: var(--color5);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4), 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+.iconImg {
+	padding: 5px;
+	height: 1.5em;
+	vertical-align: middle;
+}
+@keyframes backLienExtAnim {
+	from {
+		transform: translateX(-200%);
+	}
+	to {
+		transform: translateX(0%);
+	}
+}
+
+
+/* ~~~~~~~~~~ Suplément ~~~~~~~~~~ */
+.zoneSup {
+	user-select: none;
+	width: 100%;
+}
+#zonePopup {
 	bottom: 50px;
 	position: fixed;
-
 	display: none;
-	flex-flow: column nowrap;
 	justify-content: center;
-	align-items: center;
 }
 #popup {
-	transition: transform 0.6s ease;
-	border-radius: 50px;
-	opacity: 1;
-}
-#popupText {
 	padding: 10px 30px;
 	color: var(--color5);
 	text-align: center;
-	font-size: larger;
-	text-shadow: 2px 2px 5px var(--color1);
 	border-radius: 50px;
-	background: linear-gradient(25deg, var(--color2), var(--color3), var(--color4));
-	background-size: 600% 600%;
-	animation: PopupBackAnim 1s ease infinite;
-}
-@keyframes PopupBackAnim {
-	0% {
-		background-position:0% 0%
-	}
-	100% {
-		background-position:100% 200%
-	}
+	background-color: var(--color1);
 }
 
 #zoneArrow {
-	width: 100%;
 	bottom: 0;
 	position: fixed;
-
 	display: flex;
-	flex-flow: column nowrap;
 	justify-content: center;
-	align-items: center;
-	user-select: none;
 }
 #zoneArrow #arrow {
 	cursor: pointer;
-	animation: ArrowAnim 0.75s linear alternate infinite;
+	animation: noArrowAnim 3s forwards, ArrowAnim 0.75s 3s ease alternate infinite;
+	transform: translateY(5px);
 }
-#zoneArrow #arrow img {
+#imgArrow {
 	transform: scale(1, 0.5);
 	vertical-align: middle;
 	border-radius: 50%;
 }
-#zoneArrow #arrow img:hover {
+#imgArrow:hover {
 	transform: scale(1.2, 0.7);
 	background-color: var(--color5);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
-#zoneArrow #arrow img:active, #zoneArrow #arrow img:focus {
+#imgArrow:active, #imgArrow:focus {
 	transform: scale(1.1, 0.6);
 	opacity: 0.75;
 }
-@keyframes ArrowAnim {
+@keyframes noArrowAnim {
 	0% {
-		transform: translateY(3px);
+		transform: translateY(10000%);
+	}
+	65% {
+		transform: translateY(-50px) scale(2);
+	}
+	85% {
+		transform: translateY(0px) scale(1.2);
 	}
 	100% {
-		transform: translateY(0px);
+		transform: translateY(5px) scale(1);
+	}
+}
+@keyframes ArrowAnim {
+	from {
+		transform: translateY(5px) scale(1);
+	}
+	to {
+		transform: translateY(-10px) scale(1);
 	}
 }
 
-
-/* Contenu principal */
-
-
-/* Pied de page */
-footer {
-	align-self: stretch;
+#zoneCopyright #copyright {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 10px;
-	padding-bottom: 5px;
-	color: var(--color5);
-	background-color: var(--color1);
-	border-top: solid 3px var(--color4);
-}
-footer section {
-	display: flex;
-	flex-direction: column;
-	width: 90%;
-}
-footer section h2 {
-	color: var(--color5);
-	font-family: "NanumMyeongjo-ExtraBold", "Times New Roman";
-	text-align: center;
-	margin-top: 10px;
-}
-footer section #LienInterne {
-	border-bottom: solid 1px var(--color4);
-	text-align: center;
-	padding: 10px 0;
-	transition: 0.3s;
-}
-footer section #LienInterne a {
-	margin: 0 10px;
-	padding: 5px 100px;
-	transition: 0.3s;
-	font-family: "Roboto-Regular", "Times New Roman";
-	font-style: italic;
-	text-decoration: none;
-	color: var(--color5);
-}
-footer section #LienInterne a:hover, footer section #LienInterne a:focus {
-	background-color: var(--color1);
-	text-decoration: underline;
-	border-radius: 25px 25px;
-}
-footer section #LienInterne a:active {
-	background-color: var(--color1);
-	border-radius: 25px 25px;
-}
-footer section #LienInterne #cookie {
-	display: none;
-}
-footer section #LienExterne {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-footer section #LienExterne a {
-	margin: 5px 10px;
-	transition: 0.3s;
-}
-footer section #LienExterne a:hover, footer section #LienExterne a:focus {
-	background-color: var(--color5);
-	border-radius: 25%;
-}
-footer section #LienExterne a:active {
-	background-color: var(--color5);
-	scale: 0.9;
-	border-radius: 25%;
-}
-footer section #copyright {
-	width: 100%;
-	padding-top: 10px;
-	align-self: center;
-	text-align: center;
-	font-size: smaller;
-	font-family: "Roboto-LightItalic", "Times New Roman";
-	color: var(--color5);
-	border-top: solid 1px var(--color4);
 }
 
-.iconImg {
-	padding: 5px;
-	height: 50px;
-	vertical-align: middle;
+/* ========================== Version Tablets ========================= */
+@media screen and (min-width: 765px) {
+}
+
+/* ========================== Version Ordinateur ========================= */
+@media screen and (min-width: 1024px) {
+	#zone1 {
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: initial;
+	}
+	/* ~~~~~~~~~~ Photo de profil ~~~~~~~~~~ */
+	#zonePhotoProfil {
+		width: 35%;
+	}
+	#photoProfilBackground {
+		clip-path: polygon(30% 0, 15% 30%, 15% 70%, 30% 100%, 100% 100%, 100% 85%, 50% 50%, 100% 15%, 100% 0);
+	}
+	#photoProfil {
+		margin: initial;
+		height: 350px;
+	}
+	@keyframes backProfilAnim {
+		from {
+			transform: translateX(150%);
+		}
+		to {
+			transform: translateX(0%);
+		}
+	}	
+	@keyframes photoProfilAnim {
+		from {
+			transform: translateX(300%) translateY(0px);
+		}
+		to {
+			transform: translateX(0%) translateY(-5px);
+		}
+	}
+	/* ~~~~~~~~~~ Titre ~~~~~~~~~~ */
+	#zoneTitle {
+		margin-top: 10%;
+	}
+	#title h1 {
+		padding: 10px 20px;
+		font-size: 2.4em;
+	}
+	#age {
+		
+	}
+	#subTitle {
+		font-size: 1.25em;
+	}
+	#backTitle {
+		width: calc(100vw - 20%);
+		z-index: -2;
+		margin-left: 5%;
+		background-color: var(--color3);
+		animation: backTitleAnim 1.5s ease;
+	}
+	#backTitle::before, #backTitle::after {
+		display: none;
+	}
+	@keyframes titleAnim {
+		0%, 50% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@keyframes subtitleAnim {
+		0%, 50% {
+			transform: rotate3d(1, 0, 0, 90deg);
+			opacity: 0;
+		}
+		100% {
+			transform: rotate3d(0, 0, 0, 0deg);
+			opacity: 1;
+		}
+	}
+	@keyframes backTitleAnim {
+		0% {
+			width: calc(100vw - 50%);
+			transform: translateX(300%);
+		}
+		100% {
+			width: calc(100vw - 20%);
+			transform: translateX(0);
+		}
+	}
 }
