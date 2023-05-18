@@ -1,12 +1,12 @@
 /* Par Mahieu Alexandre */
 
 /* ================= Variable thème claire (par défauts) ================= */
-:root {
-	--color1: #404E4D;
-	--color2: #69995D;
-	--color3: #F3B700;
-	--color4: #EE6C4D;
-	--color5: #F8F8F8;
+:root {	
+	--color1: #2C3E3D;
+	--color2: #529E62;
+	--color3: #F8B500;
+	--color4: #E64C32;
+	--color5: #FFFFFF;
 }
 
 /* ======================== Variable thème sombre ======================== */
@@ -21,25 +21,26 @@
 
 /* ============================== Font-Face ============================== */
 @font-face{
-	font-family: "Yellowtail-Regular";
-	src: url("Yellowtail-Regular.ttf");
+	font-family: "TitleFont";
+	src: url("font/Oswald/Oswald-VariableFont_wght.ttf");
 }
 @font-face{
-	font-family: "NanumMyeongjo-Regular";
-	src: url("NanumMyeongjo-Regular.ttf");
+	font-family: "SubTitleFont";
+	src: url("font/Montserrat_Alternates/MontserratAlternates-ExtraLight.ttf");
 }
 @font-face{
-	font-family: "NanumMyeongjo-ExtraBold";
-	src: url("NanumMyeongjo-ExtraBold.ttf");
+	font-family: "GlobalFont";
+	src: url("font/Montserrat_Alternates/MontserratAlternates-Regular.ttf");
 }
 @font-face{
-	font-family: "Roboto-Regular";
-	src: url("Roboto-Regular.ttf");
+	font-family: "LinkFont";
+	src: url("font/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf");
 }
 @font-face{
-	font-family: "Roboto-LightItalic";
-	src: url("Roboto-LightItalic.ttf");
+	font-family: "GlobalTitleFont";
+	src: url("font/BrunoAce-Regular.ttf");
 }
+
 
 /* ========================== Général ========================= */
 * {
@@ -52,10 +53,12 @@ body {
 	flex-direction: column;
 	overflow-x: hidden;
 	color: var(--color1);
+	font-family: "GlobalFont";
 	background-color: var(--color5);
 }
 a {
 	color: var(--color3);
+	font-family: "LinkFont";
 	text-decoration: none;
 }
 a:hover {
@@ -65,6 +68,12 @@ a:active, a:focus {
 	scale: 0.95;
 	color: var(--color4);
 	opacity: 0.9;
+}
+h2 {
+	font-family: "GlobalTitleFont";
+}
+address {
+	font-style: normal;
 }
 .zone {
 	width: 100%;
@@ -100,8 +109,8 @@ a:active, a:focus {
 	animation: backProfilAnim 1s ease, backProfilGradientAnim 15s ease infinite;
 }
 #photoProfil {
-	margin-top: 10px;
-	height: 175px;
+	margin-top: 15px;
+	height: 200px;
 	display: block;
 	border-radius: 50%;
 	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.15);
@@ -154,9 +163,10 @@ a:active, a:focus {
 #title h1 {
 	padding: 5px 10px;
 	flex: 1;
-	text-transform: uppercase;
+	text-transform: none;
 	text-align: center;
-	font-size: 2em;
+	font-size: 2.4em;
+	font-family: "TitleFont", "Arial", sans-serif;
 	animation: titleAnim 1.75s ease;
 }
 #age {
@@ -170,7 +180,7 @@ a:active, a:focus {
 	text-align: right;
 	text-transform: uppercase;
 	font-size: 1.05em;
-	font-family: initial;
+	font-family: "SubTitleFont", "Courier New", monospace;
 	letter-spacing: 2px;
 	animation: subtitleAnim 1.75s ease;
 }
@@ -316,7 +326,7 @@ a:active, a:focus {
 }
 .zoneCopy {
 	margin-left: 10%;
-	padding: 5px 0px;
+	padding: 2px 0px;
 	user-select: none;
 	cursor: pointer;
 	font-size: 1.1em;
@@ -354,21 +364,18 @@ a:active, a:focus {
 	height: 5px;
 }
 #copyP1 {
-	animation: copyPartAnim 1.8s ease;
+	animation: copyPartAnim 1.9s ease;
 }
 #copyP2 {
-	animation: copyPartAnim 1.7s ease;
+	animation: copyPartAnim 1.8s ease;
 }
 #copyP3 {
-	animation: copyPartAnim 1.6s ease;
-}
-#copyP4 {
-	animation: copyPartAnim 1.5s ease;
+	animation: copyPartAnim 1.7s ease;
 }
 @keyframes copyPartAnim {
 	from {
 		z-index: -2;
-		transform: translateX(-100%);
+		transform: translateX(-200%);
 	}
 	to {
 		z-index: -2;
@@ -385,7 +392,7 @@ a:active, a:focus {
 	flex-direction: row;
 	justify-content: space-around;
 	background-color: var(--color1);
-	animation: backLienExtAnim 2s ease;
+	animation: backLienExtAnim 1.6s ease;
 }
 #lienExterne a:hover .iconImg {
 	border-radius: 5px;
@@ -399,7 +406,7 @@ a:active, a:focus {
 }
 .iconImg {
 	padding: 5px;
-	height: 1.5em;
+	height: 1.2em;
 	vertical-align: middle;
 }
 @keyframes backLienExtAnim {
@@ -410,7 +417,63 @@ a:active, a:focus {
 		transform: translateX(0%);
 	}
 }
+/* ~~~~~~~~~~ Zone2 ~~~~~~~~~~ */
 
+/* ~~~~~~~~~~ Zone3 ~~~~~~~~~~ */
+#zone3 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+#zoneComp {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.defil {
+	/*
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	*/
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.smallCard {
+	margin: 5px;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+}
+.iconComp {
+	height: 5em;
+	display: inline;
+	vertical-align: middle;
+}
+.smallCard span {
+	text-align: center;
+}
+/* ~~~~~~~~~~ Zone3 Langue ~~~~~~~~~~ */
+#zoneLang {
+	display: flex;
+	flex-direction: column;
+}
+.nivLang {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.nivLang::-webkit-meter-bar {
+	background: #eee;
+	box-shadow: 0 2px 3px rgba (0, 0, 0, 0.2) inset;
+	border-radius: 3px;
+}
 
 /* ~~~~~~~~~~ Suplément ~~~~~~~~~~ */
 .zoneSup {
@@ -530,9 +593,6 @@ a:active, a:focus {
 	#title h1 {
 		padding: 10px 20px;
 		font-size: 2.4em;
-	}
-	#age {
-		
 	}
 	#subTitle {
 		font-size: 1.25em;
