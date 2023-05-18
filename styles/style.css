@@ -445,9 +445,8 @@ address {
 	margin: 5px;
 	width: 100px;
 	height: 100px;
-	background-color: red;
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: center;
 }
@@ -468,11 +467,6 @@ address {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-}
-.nivLang::-webkit-meter-bar {
-	background: #eee;
-	box-shadow: 0 2px 3px rgba (0, 0, 0, 0.2) inset;
-	border-radius: 3px;
 }
 
 /* ~~~~~~~~~~ Suplément ~~~~~~~~~~ */
