@@ -7,6 +7,8 @@
 	--color3: #F8B500;
 	--color4: #E64C32;
 	--color5: #FFFFFF;
+
+	--colorBarre: var(--color1);
 }
 
 /* ======================== Variable thème sombre ======================== */
@@ -160,6 +162,7 @@ address {
 	justify-content: space-between;
 }
 #zoneTitle {
+	margin-bottom: 1%;
 	display: flex;
 	flex-direction: column;
 }
@@ -198,6 +201,8 @@ address {
 	top: 0;
 	width: 100%;
 	height: 100%;
+	background-color: var(--color3);
+	animation: backTitleAnim 1s ease;
 	z-index: -1;
 }
 #backTitle::before {
@@ -205,6 +210,7 @@ address {
 	width: 51%;
 	height: 100%;
 	left: 0;
+	opacity: 0;
 	position: absolute;
 	background-color: var(--color3);
 	animation: backTitleLeftAnim 1s ease;
@@ -214,6 +220,7 @@ address {
 	width: 51%;
 	height: 100%;
 	right: 0;
+	opacity: 0;
 	position: absolute;
 	background-color: var(--color3);
 	animation: backTitleRightAnim 1s ease;
@@ -236,31 +243,53 @@ address {
 		opacity: 1;
 	}
 }
+@keyframes backTitleAnim {
+	from {
+		background-color: var(--color5);
+	}
+	to {
+		background-color: var(--color5);
+	}
+}
 @keyframes backTitleLeftAnim {
 	from {
+		opacity: 1;
 		left: -76%;
 	}
 	to {
+		opacity: 1;
 		left: 0;
 	}
 }
 @keyframes backTitleRightAnim {
 	from {
+		opacity: 1;
 		right: -76%;
 	}
 	to {
+		opacity: 1;
 		right: 0;
 	}
 }
 /* ~~~~~~~~~~ Zone1 - About ~~~~~~~~~~ */
 #about {
+	position: relative;
 	flex: 1;
-	margin: 2% 5%;
+	margin: 1% 5% 1% calc(5% + 25px);
 	display: flex;
 	flex-direction: column;
-	border-left: 25px solid var(--color1);
-	border-image: linear-gradient(0deg, var(--color5) 0%, var(--color1) 100%) 1;
-	animation: noBorderAboutAnim 1.5s ease, borderAboutAnim 1.35s 1.5s ease;
+	z-index: -3;
+}
+#about::before {
+	content: "";
+	position: absolute;
+	left: -25px;
+	top: 0;
+	width: 25px;
+	height: 100%;
+	background: linear-gradient(to bottom, var(--color1), var(--color5));
+	z-index: -2;
+	animation: noBorderAboutAnim 1s ease, borderAboutAnim 1.35s 1s ease;
 }
 #about span {
 	margin-left: 3%;
@@ -268,63 +297,45 @@ address {
 	font-size: 1.2em;
 }
 #aboutP1 {
-	animation: aboutAnim 2s ease;
+	animation: aboutAnim 1.7s ease;
 }
 #aboutP2 {
-	animation: aboutAnim 2.5s ease;
+	animation: aboutAnim 1.9s ease;
 }
 #aboutP3 {
-	animation: aboutAnim 3s ease;
+	animation: aboutAnim 2.1s ease;
 }
 @keyframes noBorderAboutAnim {
 	from {
-		border-left: 25px solid var(--color5);
-		border-image: initial;
+		width: 0;
 	}
 	to {
-		border-left: 25px solid var(--color5);
-		border-image: initial;
+		width: 0;
 	}
 }
 @keyframes borderAboutAnim {
-	0% {
-		border-image: linear-gradient(0deg, var(--color5) 100%, var(--color1) 0%) 1 100%;
+	from {
+		height: 0;
 	}
-	15% {
-		border-image: linear-gradient(0deg, var(--color5) 90%, var(--color1) 10%) 1 100%;
-	}
-	30% {
-		border-image: linear-gradient(0deg, var(--color5) 75%, var(--color1) 25%) 1 100%;
-	}
-	45% {
-		border-image: linear-gradient(0deg, var(--color5) 60%, var(--color1) 40%) 1 100%;
-	}
-	60% {
-		border-image: linear-gradient(0deg, var(--color5) 45%, var(--color1) 55%) 1 100%;
-	}
-	75% {
-		border-image: linear-gradient(0deg, var(--color5) 30%, var(--color1) 70%) 1 100%;
-	}
-	90% {
-		border-image: linear-gradient(0deg, var(--color5) 15%, var(--color1) 85%) 1 100%;
-	}
-	100% {
-		border-image: linear-gradient(0deg, var(--color5) 0%, var(--color1) 100%) 1 100%;
+	to {
+		height: 100%;
 	}
 }
 @keyframes aboutAnim {
 	from {
+		opacity: 0;
 		z-index: -2;
 		transform: translateX(300%);
 	}
 	to {
+		opacity: 1;
 		z-index: -2;
 		transform: translateX(0%);
 	}
 }
 /* ~~~~~~~~~~ Zone1 - Contact ~~~~~~~~~~ */
 #zoneContact {
-	margin-top: 5%;
+	margin-top: 1%;
 	display: flex;
 	flex-direction: column;
 }
@@ -332,12 +343,14 @@ address {
 	margin-left: 5%;
 	animation: copyPartAnim 2s ease;
 }
-.zoneCopy {
-	margin-left: 10%;
-	padding: 2px 0px;
+#contentCopy {
+	margin: 1% 0 1% 10%;
+	max-width: fit-content;
 	user-select: none;
-	cursor: pointer;
 	font-size: 1.1em;
+}
+.zoneCopy {
+	cursor: pointer;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -392,7 +405,7 @@ address {
 }
 
 #lienExterne {
-	margin-bottom: 0px;
+	margin-top: 1%;
 	padding: 5px 0px;
 	align-self: center;
 	width: 100%;
@@ -643,11 +656,11 @@ address {
 		}
 	}
 	@keyframes backTitleAnim {
-		0% {
+		from {
 			width: calc(100vw - 50%);
 			transform: translateX(300%);
 		}
-		100% {
+		to {
 			width: calc(100vw - 20%);
 			transform: translateX(0);
 		}
