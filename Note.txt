@@ -8,3 +8,7 @@ Ajouter des annimations JS
 Faire le print css
 
 
+
+
+modif alt des dernières img (svg) ajouter
+font-family global pas appliquer partout !

@@ -22,7 +22,7 @@
 /* ============================== Font-Face ============================== */
 @font-face{
 	font-family: "TitleFont";
-	src: url("font/Oswald/Oswald-VariableFont_wght.ttf");
+	src: url("font/Oswald-VariableFont_wght.ttf");
 }
 @font-face{
 	font-family: "SubTitleFont";
@@ -31,6 +31,10 @@
 @font-face{
 	font-family: "GlobalFont";
 	src: url("font/Montserrat_Alternates/MontserratAlternates-Regular.ttf");
+}
+@font-face{
+	font-family: "SpecialFont";
+	src: url("font/Montserrat_Alternates/MontserratAlternates-Black.ttf");
 }
 @font-face{
 	font-family: "LinkFont";
@@ -47,13 +51,16 @@
 	margin: 0;
 	padding: 0;
 }
+html {
+	overflow-x: hidden;
+	font-family: "GlobalFont";
+}
 body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	overflow-x: hidden;
 	color: var(--color1);
-	font-family: "GlobalFont";
 	background-color: var(--color5);
 }
 a {
@@ -82,13 +89,14 @@ address {
 
 
 /* ========================== Version Téléphone ========================= */
+/* ~~~~~~~~~~ Zone1 ~~~~~~~~~~ */
 #zone1 {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
 }
-/* ~~~~~~~~~~ Photo de profil ~~~~~~~~~~ */
+/* ~~~~~~~~~~ Zone1 - Profile picture ~~~~~~~~~~ */
 #zonePhotoProfil {
 	width: 100%;
 	position: relative;
@@ -144,7 +152,7 @@ address {
 		transform: translateY(0%) translateY(-5px);
 	}
 }
-/* ~~~~~~~~~~ Titre ~~~~~~~~~~ */
+/* ~~~~~~~~~~ Zone1 - Title ~~~~~~~~~~ */
 #textZone1 {
 	flex: 1;
 	display: flex;
@@ -244,7 +252,7 @@ address {
 		right: 0;
 	}
 }
-/* ~~~~~~~~~~ About ~~~~~~~~~~ */
+/* ~~~~~~~~~~ Zone1 - About ~~~~~~~~~~ */
 #about {
 	flex: 1;
 	margin: 2% 5%;
@@ -314,7 +322,7 @@ address {
 		transform: translateX(0%);
 	}
 }
-/* ~~~~~~~~~~ Contact ~~~~~~~~~~ */
+/* ~~~~~~~~~~ Zone1 - Contact ~~~~~~~~~~ */
 #zoneContact {
 	margin-top: 5%;
 	display: flex;
@@ -418,6 +426,9 @@ address {
 	}
 }
 /* ~~~~~~~~~~ Zone2 ~~~~~~~~~~ */
+#zone2 {
+	font-size: 1.2em;
+}
 
 /* ~~~~~~~~~~ Zone3 ~~~~~~~~~~ */
 #zone3 {
@@ -456,7 +467,18 @@ address {
 	vertical-align: middle;
 }
 .smallCard span {
+	font-size: 1em;
+	font-family: "SpecialFont";
 	text-align: center;
+}
+#cardHTML > #iconCSS {
+	display: none;
+}
+#cardHTML:hover > #iconCSS {
+	display: initial;
+}
+#cardHTML:hover > #iconHTML {
+	display: none;
 }
 /* ~~~~~~~~~~ Zone3 Langue ~~~~~~~~~~ */
 #zoneLang {
@@ -474,6 +496,7 @@ address {
 	user-select: none;
 	width: 100%;
 }
+/* ~~~~~~~~~~ Suplément Copy ~~~~~~~~~~ */
 #zonePopup {
 	bottom: 50px;
 	position: fixed;
@@ -487,7 +510,7 @@ address {
 	border-radius: 50px;
 	background-color: var(--color1);
 }
-
+/* ~~~~~~~~~~ Suplément Arrow ~~~~~~~~~~ */
 #zoneArrow {
 	bottom: 0;
 	position: fixed;
@@ -535,7 +558,7 @@ address {
 		transform: translateY(-10px) scale(1);
 	}
 }
-
+/* ~~~~~~~~~~ Suplément Copyright ~~~~~~~~~~ */
 #zoneCopyright #copyright {
 	display: flex;
 	flex-direction: column;
