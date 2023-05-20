@@ -57,7 +57,7 @@ function rotateArrow() {
 		$("#imgArrow").css("transform", "rotate(0deg) scale(1, 0.5)");
 		angleArrow = 0;
 	}
-	if(scrollPosition + windowHeight >= documentHeight * 0.99) {
+	if(scrollPosition + windowHeight >= documentHeight) {
 		$("#imgArrow").css("transform", "rotate(180deg) scale(1, 0.5)");
 		angleArrow = 180;
 	}
@@ -144,6 +144,19 @@ $(document).ready(function() {
 		"touchmove": function(e) { 
 			rotateArrow();
 			updateZone();
+
+			let popup = $('<div id="contentPopup"><div id="popup">Copier !</div></div>');
+			$("body").append(popup);
+
+			popup.css("display", "none");
+
+			setTimeout(function() {
+				popup.css("display", "none");
+				popup.remove();
+			}, 2000);
+			setTimeout(function() {
+				popup.css("display", "flex");
+			}, 50);
 		}
 	});
 });
