@@ -668,6 +668,7 @@ address {
 }
 #loader {
 	color: var(--color5);
+	letter-spacing: 0.3em;
 	font-size: 2em;
 	font-family: "GlobalTitleFont";
 	animation: loadAnim 1.25s linear alternate infinite;
