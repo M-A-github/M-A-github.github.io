@@ -1,14 +1,31 @@
-Faire le site en css pure
+Partie 1 :
+	Font-family
+	Font-Size
+	Anim Correct
+	Verif orthographe
+	Version Tablette
+	Version PC
 
-Ajouter des annimations JS
-	- lazyload
-	- time line
-	- card / slider
+Partie 2 :
+	Tous ...
+	Time-line
+
+	Font-family
+	Font-Size
+	Animation (lazyload)
+	Verif orthographe
+	Version Tablette
+	Version PC
+	Image
+
+Partie 3 :
+	Font-family
+	Font-Size
+	Animation (lazyload)
+	Verif orthographe
+	Style Langue
+	Card / slider
+	Image
+
 
 Faire le print css
-
-
-
-
-modif alt des dernières img (svg) ajouter
-font-family global pas appliquer partout !

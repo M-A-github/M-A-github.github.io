@@ -14,7 +14,7 @@
 
 	<body>
 		<main>
-			<section class="zone" id="zone1">
+			<section class="zone apparition" id="zone1">
 				<div id="zonePhotoProfil">
 					<div id="photoProfilBackground"></div>
 					<img id="photoProfil" draggable="false" src="images/photoProfil.png" alt="Photo de profil">
@@ -24,8 +24,7 @@
 					<div id="zoneTitle">
 						<div id="title">
 							<h1>Alexandre Mahieu</h1>
-							<!-- <span id="age">( 12/01/1999 )</span> -->
-							<span id="age">( 23ans )</span>
+							<span id="age">( 12/01/1999 )</span>
 							<div id="backTitle"></div>
 						</div>
 						<span id="subTitle">Informaticien</span>
@@ -49,29 +48,29 @@
 							<h2>Contact</h2>
 							
 							<div id="contentCopy">
-								<span class="zoneCopy" id="copyP1">
+								<div class="zoneCopy" id="copyP1">
 									<img class="iconContact" draggable="false" onclick="copyText('numberPerso')" src="./images/Phone_icon.svg" alt="Téléphone :">
 									<a href="tel:+32497671119" id="numberPerso" target="_blank">+32 497 67 11 19</a>
 									<sup onclick="copyText('numberPerso')" class="copyIcon">
 										<img draggable="false" src="./images/Copy_icon.svg" alt="Icon copy">
 									</sup>
-								</span>
-								<span class="zoneCopy" id="copyP2">
+								</div>
+								<div class="zoneCopy" id="copyP2">
 									<img class="iconContact" draggable="false" onclick="copyText('mailPerso')" src="./images/Mail_icon.svg" alt="Mail">
 									<a href="mailto:mahalex1@gmail.com" id="mailPerso" target="_blank">mahalex1@gmail.com</a>
 									<sup onclick="copyText('mailPerso')" class="copyIcon">
 										<img draggable="false" src="./images/Copy_icon.svg" alt="Icon copy">
 									</sup>
-								</span>
-								<span class="zoneCopy" id="copyP3">
+								</div>
+								<div class="zoneCopy" id="copyP3">
 									<img class="iconContact" draggable="false" onclick="copyText('addressPerso')" src="./images/Map_icon.svg" alt="Addresse :">
-									<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="addressPerso" target="_blank">
-										<address>Rue de Frameries 428,<wbr>&nbsp;7033&nbsp;Cuesmes</address>
-									</a>
+									<address>
+										<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="addressPerso" target="_blank">Rue de Frameries 428,<wbr>&nbsp;7033&nbsp;Cuesmes</a>
+									</address>
 									<sup onclick="copyText('addressPerso')" class="copyIcon">
 										<img draggable="false" src="./images/Copy_icon.svg" alt="Icon copy">
 									</sup>
-								</span>
+								</div>
 							</div>
 		
 							<span id="lienExterne">
@@ -93,50 +92,50 @@
 				</div>
 			</section>
 
-			<section class="zone" id="zone2">
-				<div id="zoneFormations">
+			<section class="zone apparition" id="zone2">
+				<div id="zoneFormations apparition">
 					<h2>Formations</h2>
 
-					<div class="formation">
-						<span class="zoneCopy">
+					<div class="formation apparition">
+						<div class="zoneCopy">
 							<img class="iconContact" draggable="false" onclick="copyText('addressHEH')" src="./images/Map_icon.svg" alt="Icon localisation">
-							<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="addressHEH" target="_blank">
-								<address><abbr title="Avenue">Av.</abbr> Victor Maistriau 8,<wbr>&nbsp;7000&nbsp;Mons</address>
-							</a>
+							<address>
+								<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="addressHEH" target="_blank"><abbr title="Avenue">Av.</abbr> Victor Maistriau 8,<wbr>&nbsp;7000&nbsp;Mons</a>
+							</address>
 							<sup onclick="copyText('addressHEH')" class="copyIcon">
 								<img src="./images/Copy_icon.svg" alt="Icon copy">
 							</sup>
-						</span>
+						</div>
 						<span>Bachelier en informatique & Systèmes option développement | <abbr title="Haute École en Hainaut">HEH</abbr> - Département des Sciences et technologies</span>
 						<h3>HEH 2021-2023</h3>
 						<p>Bachelier en Informatique & systèmes orientation réseaux & télécommunications avec option développement</p>
 					</div>
 					
-					<div class="formation">
-						<span class="zoneCopy">
+					<div class="formation apparition">
+						<div class="zoneCopy">
 							<img class="iconContact" draggable="false" onclick="copyText('addressTechnoCampus')" src="./images/Map_icon.svg" alt="Icon localisation">
-							<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="addressTechnoCampus" target="_blank">
-								<address><abbr title="Boulevard">Bd</abbr> Initialis 18,<wbr>&nbsp;7000&nbsp;Mons</address>
-							</a>
+							<address>
+								<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="addressTechnoCampus" target="_blank"><abbr title="Boulevard">Bd</abbr> Initialis 18,<wbr>&nbsp;7000&nbsp;Mons</a>
+							</address>
 							<sup onclick="copyText('addressTechnoCampus')" class="copyIcon">
 								<img src="./images/Copy_icon.svg" alt="Icon copy">
 							</sup>
-						</span>
+						</div>
 						<span>TechnoCampus - Mons</span>
 						<h3>Formation à « Technocampus » :</h3>
 						<p>Instrumentation/Régulation en mai 2019</p>
 					</div>
 
-					<div class="formation">
-						<span class="zoneCopy">
+					<div class="formation apparition">
+						<div class="zoneCopy">
 							<img class="iconContact" draggable="false" onclick="copyText('addressSaintLuc')" src="./images/Map_icon.svg" alt="Icon localisation">
-							<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="addressSaintLuc" target="_blank">
-								<address>Rue Saint-Luc 3,<wbr>&nbsp;7000&nbsp;Mons</address>
-							</a>
+							<address>
+								<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="addressSaintLuc" target="_blank">Rue Saint-Luc 3,<wbr>&nbsp;7000&nbsp;Mons</a>
+							</address>
 							<sup onclick="copyText('addressSaintLuc')" class="copyIcon">
 								<img src="./images/Copy_icon.svg" alt="Icon copy">
 							</sup>
-						</span>
+						</div>
 						<span><abbr title="Certificat d'Enseignement Secondaire Supérieur">CESS</abbr> & Electricien Automaticien & ElectroMecanicien</span>
 						<span>Instituts Saint-Luc Mons</span>
 						<h3>Institut Technique Saint-Luc Mons 2012-2019</h3>
@@ -153,23 +152,23 @@
 						</p>
 					</div>
 
-					<div class="formation">
-						<span class="zoneCopy">
+					<div class="formation apparition">
+						<div class="zoneCopy">
 							<img class="iconContact" draggable="false" onclick="copyText('addressBervoets')" src="./images/Map_icon.svg" alt="Icon localisation">
-							<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="addressBervoets" target="_blank">
-								<address><abbr title="Avenue">Av.</abbr> Victor Maistriau 11,<wbr>&nbsp;7000&nbsp;Mons</address>
-							</a>
+							<address>
+								<a href="https://goo.gl/maps/RKhprtTTTuam2L4L9" id="addressBervoets" target="_blank"><abbr title="Avenue">Av.</abbr> Victor Maistriau 11,<wbr>&nbsp;7000&nbsp;Mons</a>
+							</address>
 							<sup onclick="copyText('addressBervoets')" class="copyIcon">
 								<img src="./images/Copy_icon.svg" alt="Icon copy">
 							</sup>
-						</span>
+						</div>
 						<span><abbr title="Certificat d'Études de Base">CEB</abbr> | Athénée Royal Marguerite Bervoets</span>
 						<h3>Athénée Royal Marguerite Bervoets Mons 2003-2012</h3>
 						Obtention du Certificat d’étude de base (CEB) en juin 2012
 					</div>
 				</div>
 
-				<div id="zoneProfessionnel">
+				<div id="zoneProfessionnel" class="apparition">
 					<h2>Parcours Professionnel (Jobs étudiant)</h2>
 					<ul>
 						<li>
@@ -196,12 +195,12 @@
 				</diV>
 			</section>
 
-			<section class="zone" id="zone3">
+			<section class="zone apparition" id="zone3">
 				<div id="zoneComp">
 					<h2>Compétences</h2>
-					<div id="zoneLangProg">
-						<h3>Langage de Programmation :</h3>
-						<div class="defil">
+					<div id="zoneLangProg" class="apparition">
+						<h3>Langage de Programmation</h3>
+						<div class="defil" id="defil1">
 							<div class="smallCard">
 								<img src="./images/Python_icon.svg" draggable="false" alt="Icon language Python" class="iconComp">
 								<span>Python</span>
@@ -228,7 +227,7 @@
 								<span>JavaScript</span>
 							</div>
 							<div class="smallCard">
-								<img src="./images/JQuery_icon.svg" draggable="false" alt="Icon language JavaScript" class="iconComp">
+								<img src="./images/JQuery_icon.svg" draggable="false" alt="Icon language JQuery" class="iconComp">
 								<span>JQuery</span>
 							</div>
 							<div class="smallCard">
@@ -258,11 +257,11 @@
 						</div>
 					</div>
 						
-					<div id="zoneLogiciel">
-						<h3>Logiciel :</h3>
-						<div class="defil">
+					<div id="zoneLogiciel" class="apparition">
+						<h3>Logiciel</h3>
+						<div class="defil" id="defil2">
 							<div class="smallCard">
-								<img src="./images/Linux_icon.svg" draggable="false" alt="Icon language Git" class="iconComp">
+								<img src="./images/Linux_icon.svg" draggable="false" alt="Icon language Linux" class="iconComp">
 								<span>Linux</span>
 							</div>
 							<div class="smallCard">
@@ -302,7 +301,7 @@
 								<span>Multisim</span>
 							</div>
 							<div class="smallCard">
-								<img src="./images/Cisco_icon.svg" draggable="false" alt="Icon language Cisco Packet Tracer" class="iconComp">
+								<img src="./images/Cisco_icon.svg" draggable="false" alt="Icon language Cisco" class="iconComp">
 								<span>Cisco Packet Tracer</span>
 							</div>
 							<div class="smallCard">
@@ -328,35 +327,45 @@
 						</div>
 					</div>
 
-					<div id="zoneLang">
-						<h3>Langue :</h3>
-						<span>
-							Français
-							<meter value="9" min="0" max="10" class="nivLang"></meter>
-						</span>
-						<span>
-							Anglais
-							<meter value="3" min="0" max="10" class="nivLang"></meter>
-						</span>
+					<div id="zoneLang" class="apparition">
+						<h3>Langue</h3>
+						<div class="lang">
+							<span class="titleLang">Français</span>
+							<div class="progress-bar">
+								<div class="progress" style="width: 95%;"></div>
+							</div>
+						</div>
+						<div class="lang">
+							<span class="titleLang">Anglais</span>
+							<div class="progress-bar">
+								<div class="progress" style="width: 25%;"></div>
+							</div>
+						</div>
+						<div class="lang">
+							<span class="titleLang">Néerlandais</span>
+							<div class="progress-bar">
+								<div class="progress" style="width: 10%;"></div>
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<div id="zoneLoisir">
+				<div id="zoneLoisir" class="apparition">
 					<h2>Loisirs</h2>
-					<div class="defil">
-						<div class="smallCard">
+					<div id="contentCard">
+						<div class="mCard">
 							<img src="./images/Python_icon.svg" draggable="false" alt="Icon language python" class="iconComp">
 							<span>Photographie</span>
 						</div>
-						<div class="smallCard">
+						<div class="mCard">
 							<img src="./images/Python_icon.svg" draggable="false" alt="Icon language python" class="iconComp">
 							<span>Vélo (VTT)</span>
 						</div>
-						<div class="smallCard">
+						<div class="mCard">
 							<img src="./images/Python_icon.svg" draggable="false" alt="Icon language python" class="iconComp">
 							<span>Musique</span>
 						</div>
-						<div class="smallCard">
+						<div class="mCard">
 							<img src="./images/Python_icon.svg" draggable="false" alt="Icon language python" class="iconComp">
 							<span>Manga</span>
 						</div>
@@ -365,24 +374,8 @@
 			</section>
 		</main>
 
-		<div id="zonePopup" class="zoneSup">
-			<div id="popup">
-				Copier !
-			</div>
-		</div>
-
-		<div id="zoneArrow" class="zoneSup">
-			<div id="arrow">
-				<img id="imgArrow" draggable="false" src="./images/Arrows_icon.svg" alt="Icon flêche">
-			</div>
-		</div>
-
-		<div id="zoneCopyright" class="zoneSup">
-			<div id="copyright">
-				<span>&copy;2023 - Mahieu Alexandre</span>
-				<span>HEH - BAP2</span>
-				<span>Informatique - option Développement</span>
-			</div>
+		<div id="arrow">
+			<img id="imgArrow" onclick="scrollArrow()" draggable="false" src="./images/Arrows_icon.svg" alt="Icon flêche">
 		</div>
 
 		<script src="./scripts/jquery-3.3.1.min.js"></script>

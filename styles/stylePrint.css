@@ -1,20 +1,22 @@
+
+
 /* ============================== Impression ============================= */
 @media print {
 	body {
-		background-color: white;
+		background-color: red;
 	}
 	a {
 		color: black;
 	}
 
-	#zonePhotoProfilBackground, #photoProfil, #backTitle, #zoneTitle h1, #subTitle, #about p, #contact > *, #contact #LienExterne > * {
+	* {
 		animation: unset !important;
 	}
 
 	.iconContact {
 		visibility: hidden;
 	}
-	#zonePopup, #zoneArrow {
+	#contentPopup > *, #Arrow {
 		display: none;
 	}
 }
