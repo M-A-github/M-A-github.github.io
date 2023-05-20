@@ -62,20 +62,6 @@ function rotateArrow() {
 		$("#imgArrow").css("transform", "rotate(180deg) scale(1, 0.5)");
 		angleArrow = 180;
 	}
-
-	$("#contentPopup").remove();
-	let popup = $('<div id="contentPopup"><div id="popup">'+documentHeight+' '+(windowHeight+scrollPosition)+'</div></div>');
-	$("body").append(popup);
-
-	popup.css("display", "none");
-
-	setTimeout(function() {
-		popup.css("display", "none");
-		popup.remove();
-	}, 2000);
-	setTimeout(function() {
-		popup.css("display", "flex");
-	}, 50);
 }
 
 function updateZone() {
@@ -161,13 +147,4 @@ $(document).ready(function() {
 			updateZone();
 		}
 	});
-
-	$(function(){
-		var resized = -1;
-		$(window).resize(function(){
-		  $('#currenth').val( $('.vhbox').eq(1).height() );
-		  if (++resized) $('#currenth').css('background:#00c');
-		})
-		.resize();
-	  })
 });
