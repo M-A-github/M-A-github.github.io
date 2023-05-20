@@ -130,7 +130,11 @@ $(document).ready(function() {
 	defilCard(1);
 	defilCard(2);
 	
-	$(window).scroll(function() {
+	$(window).scroll(() => {
+		rotateArrow();
+		updateZone();
+	});
+	$(window).on("scroll touchmove", () => {
 		rotateArrow();
 		updateZone();
 	});
