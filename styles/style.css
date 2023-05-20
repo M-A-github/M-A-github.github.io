@@ -58,7 +58,6 @@
 	padding: 0;
 }
 html {
-	overflow-x: hidden;
 	font-family: "GlobalFont";
 	font-size: 14px;
 }
@@ -596,7 +595,7 @@ address {
 	font-size: 1em;
 	border-radius: 50px;
 	background-color: var(--color1);
-	animation: popupAnim 0.75s ease, popupAnim 1s 1.1s ease reverse;
+	animation: popupAnim 0.5s ease, popupAnim 1s 1.1s ease reverse;
 }
 @keyframes popupAnim {
 	from {

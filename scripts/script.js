@@ -3,6 +3,7 @@ function copyText(element) {
 	navigator.clipboard.writeText($("#"+element).text());
 
 	// Cree une info bull pour le copy
+	$("#contentPopup").remove();
 	let popup = $('<div id="contentPopup"><div id="popup">Copier !</div></div>');
 	$("body").append(popup);
 
@@ -61,6 +62,20 @@ function rotateArrow() {
 		$("#imgArrow").css("transform", "rotate(180deg) scale(1, 0.5)");
 		angleArrow = 180;
 	}
+
+	$("#contentPopup").remove();
+	let popup = $('<div id="contentPopup"><div id="popup">'+documentHeight+' '+(windowHeight+scrollPosition)+'</div></div>');
+	$("body").append(popup);
+
+	popup.css("display", "none");
+
+	setTimeout(function() {
+		popup.css("display", "none");
+		popup.remove();
+	}, 2000);
+	setTimeout(function() {
+		popup.css("display", "flex");
+	}, 50);
 }
 
 function updateZone() {
@@ -144,19 +159,6 @@ $(document).ready(function() {
 		"touchmove": function(e) { 
 			rotateArrow();
 			updateZone();
-
-			let popup = $('<div id="contentPopup"><div id="popup">Copier !</div></div>');
-			$("body").append(popup);
-
-			popup.css("display", "none");
-
-			setTimeout(function() {
-				popup.css("display", "none");
-				popup.remove();
-			}, 2000);
-			setTimeout(function() {
-				popup.css("display", "flex");
-			}, 50);
 		}
 	});
 });
