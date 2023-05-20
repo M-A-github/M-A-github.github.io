@@ -36,12 +36,12 @@ function scrollArrow() {
 		return;
 	}
 	if(parseInt($(window).scrollTop() + $(window).height())+10 >= $(document).height() || angleArrow == 180) {
-		$("html, body").animate({ 'scrollTop': "0" }, 250, () => {
+		$("html, body").animate({ "scrollTop": "0" }, 250, () => {
 			isAnimating = false;
 		});
 	} else {
 		let pos = $(window).scrollTop() + $(window).height();
-		$("html, body").animate({ 'scrollTop': pos }, 250, () => {
+		$("html, body").animate({ "scrollTop": pos }, 250, () => {
 			isAnimating = false;
 		});
 	}
@@ -71,53 +71,58 @@ function updateZone() {
 	});
 }
 
-function defilCard(id) {
-	// Cache ou montre les card
+function checkCard(id) {
 	$("#defil"+id).children().each(function(index) {
 		var distanceLeft = $(this).offset().left;
-		var distanceRight = $(window).width() - ($(this).offset().left + $(this).outerWidth(true));
+		var distanceRight = $(window).width() - ($(this).offset().left + $(this).outerWidth());
 
-		if(distanceLeft <= $(window).width() * 0.15) {
-			$(this).addClass("hidden");
-		} else if(distanceRight <= $(window).width() * 0.15) {
-			$(this).addClass("hidden");
+		if(valDec[id-1] < 0) {
+			if(distanceLeft < ($(window).width() / 2) - ($(this).outerWidth(true) * 2) || distanceRight < ($(window).width() / 2) - ($(this).outerWidth(true) * 4)) {
+				$(this).addClass("hidden");
+			}
+			else {
+				$(this).removeClass("hidden");
+			}
 		} else {
-			$(this).removeClass("hidden");
+			if(distanceLeft < ($(window).width() / 2) - ($(this).outerWidth(true) * 4) || distanceRight < ($(window).width() / 2) - ($(this).outerWidth(true) * 2)) {
+				$(this).addClass("hidden");
+			}
+			else {
+				$(this).removeClass("hidden");
+			}
 		}
 	});
+}
 
-	// Défile dans le bon sens
-	if(posCard[id] <= 0) {
-		$("#defil"+id).children().each(function(index) {
-			if(index == id) {
-				decalCard[id] = -$(this).outerWidth(true);
-			}
-		});
-	}
-	if(posCard[id] >= $("#defil"+id).children().length - 1) {
-		$("#defil"+id).children().each(function(index) {
-			if(index == id) {
-				decalCard[id] = $(this).outerWidth(true);
-			}
-		});
-	}
+function defilCard(id) {
+	// Cache ou montre les card
+	checkCard(id);
 	// Fait défiler
 	setTimeout(function() {
-		$("#defil"+id).animate({ 'margin-left': '+='+decalCard[id]+'px'}, 250, 'linear');
-		if(decalCard[id] < 0) {
-			posCard[id] += 1;
+		$("#defil"+id).animate({ "margin-left": "+=" + valDec[id-1] + "px"}, 250, "linear");
+		if(valDec[id-1] < 0) {
+			posCard[id-1] += 1;
 		} else {
-			posCard[id] -= 1;
+			posCard[id-1] -= 1;
 		}
-		defilCard(id)
+		if(posCard[id-1] == $("#defil"+id).children().length-1 && valDec[id-1] < 0) {
+			valDec[id-1] = -valDec[id-1];
+		}
+		if(posCard[id-1] == 0 && valDec[id-1] > 0) {
+			valDec[id-1] = -valDec[id-1];
+		}
+		defilCard(id);
 	}, 1500);
 }
 
+$("body").css("display", "none");
+
 var isAnimating = false;
 var angleArrow = 0;
-var posCard = Array(0, 0, 0);
-var decalCard = Array(0, -120, -120);
+var posCard = Array(0, 0);
+var valDec = Array(-150, -150);
 $(document).ready(function() {
+	$("body").css("display", "initial");
 	calculAge();
 	rotateArrow();
 
@@ -126,7 +131,8 @@ $(document).ready(function() {
 
 	$(".defil").css("flex-flow", "row nowrap");
 	$(".defil").css("justify-content", "flex-start");
-	$(".defil").css('margin-left', '45%');
+	$(".defil").css("width", "200%");
+	$(".defil").css("margin-left", "calc(50% - 75px)");
 	defilCard(1);
 	defilCard(2);
 	
@@ -134,8 +140,10 @@ $(document).ready(function() {
 		rotateArrow();
 		updateZone();
 	});
-	$(window).on("scroll touchmove", () => {
-		rotateArrow();
-		updateZone();
+	$(window).on({
+		"touchmove": function(e) { 
+			rotateArrow();
+			updateZone();
+		}
 	});
 });
