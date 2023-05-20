@@ -161,4 +161,13 @@ $(document).ready(function() {
 			updateZone();
 		}
 	});
+
+	$(function(){
+		var resized = -1;
+		$(window).resize(function(){
+		  $('#currenth').val( $('.vhbox').eq(1).height() );
+		  if (++resized) $('#currenth').css('background:#00c');
+		})
+		.resize();
+	  })
 });

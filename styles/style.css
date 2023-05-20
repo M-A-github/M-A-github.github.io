@@ -654,6 +654,30 @@ address {
 	}
 }
 
+
+/*
+  this is the box which should keep constant the height...
+  min-height to allow content to be taller than viewport if too much text
+*/
+.vhbox{
+  min-height:100vh;
+  position:relative;
+}
+
+.vhbox .t{
+  display:table;
+  position:relative;
+  width:100%;
+  height:100vh;
+}
+
+.vhbox .c{
+  height:100%;
+  display:table-cell;
+  vertical-align:middle;
+  text-align:center;
+}
+
 /* ========================== Version Tablets ========================= */
 @media screen and (min-width: 765px) {
 }
