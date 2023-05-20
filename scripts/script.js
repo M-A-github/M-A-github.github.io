@@ -57,7 +57,7 @@ function rotateArrow() {
 		$("#imgArrow").css("transform", "rotate(0deg) scale(1, 0.5)");
 		angleArrow = 0;
 	}
-	if(scrollPosition + windowHeight >= documentHeight) {
+	if(scrollPosition + windowHeight >= documentHeight * 0.99) {
 		$("#imgArrow").css("transform", "rotate(180deg) scale(1, 0.5)");
 		angleArrow = 180;
 	}
