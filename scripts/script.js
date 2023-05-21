@@ -35,10 +35,14 @@ function calculAge() {
 
 // Fait défilé la page
 function scrollArrow() {
+	var scrollPosition = $(window).scrollTop();
+	var windowHeight = $(window).height();
+	var documentHeight = $(document).height();
+
 	if (isAnimating) {
 		return;
 	}
-	if(parseInt($(window).scrollTop() + $(window).height())+10 >= $(document).height() || angleArrow == 180) {
+	if(parseInt(scrollPosition + windowHeight) >= documentHeight - 100 || angleArrow == 180) {
 		$("html, body").animate({ "scrollTop": "0" }, 250, () => {
 			isAnimating = false;
 		});
@@ -61,7 +65,7 @@ function rotateArrow() {
 		$("#imgArrow").css("transform", "rotate(0deg) scale(1, 0.5)");
 		angleArrow = 0;
 	}
-	if(scrollPosition + windowHeight >= documentHeight) {
+	if(scrollPosition + windowHeight >= documentHeight - 100) {
 		$("#imgArrow").css("transform", "rotate(180deg) scale(1, 0.5)");
 		angleArrow = 180;
 	}
