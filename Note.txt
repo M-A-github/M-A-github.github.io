@@ -1,7 +1,3 @@
-Partie 1 :
-	Font-Size
-	Size
-
 Partie 2 :
 	Tous ...
 	Time-line
@@ -13,10 +9,6 @@ Partie 2 :
 	Version Tablette
 	Version PC
 	Image
-
-Partie 3 :
-	Font-Size
-	Size
 
 
 Faire le print css

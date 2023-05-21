@@ -5,7 +5,6 @@
 	* {
 		margin: 0 !important;
 		padding: 0 !important;
-		z-index: 0 !important;
 		animation: none !important;
 		transition: 0s !important;
 		visibility: visible !important;
@@ -15,9 +14,6 @@
 	.zone {
 		width: initial !important;
 		min-height: initial !important;
-	}
-	#zonePhotoProfil {
-
 	}
 	#photoProfil {
 		height: 150px;
