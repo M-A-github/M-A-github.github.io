@@ -7,15 +7,25 @@
 	--color3: #F8B500;
 	--color4: #E64C32;
 	--color5: #FFFFFF;
+	--special1: 255, 255, 255;
+	--special2: 44, 62, 61;
+
+	--iconTheme: url(../images/Moon_icon.svg);
+	--positionTheme: left;
+	--filterTheme: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg);
 }
 
 /* ======================== Variable thème sombre ======================== */
 @media (prefers-color-scheme: dark) {
 	:root {
-		/*
-		--bodyBackgroundColor: #000;
-		--bodyTextColor: #FFF;
-		*/
+		--color1: #FFFFFF;
+		--color5: #2C3E3D;
+		--special1: 44, 62, 61;
+		--special2: 255, 255, 255;
+
+		--iconTheme: url(../images/Sun_icon.svg);
+		--positionTheme: left;
+		--filterTheme: initial;
 	}
 }
 
@@ -68,6 +78,7 @@ body {
 	overflow-x: clip;
 	color: var(--color1);
 	background-color: var(--color5);
+	transition: background-color 1s, color 1s;
 }
 a {
 	color: var(--color3);
@@ -83,6 +94,8 @@ a:active, a:focus {
 	opacity: 0.9;
 }
 h2 {
+	margin-left: 5%;
+	font-size: 1.5em;
 	font-family: "GlobalTitleFont";
 }
 address {
@@ -92,12 +105,14 @@ address {
 	width: 100%;
 	min-height: 100vh;
 }
-.apparition {
-	transition: 1s;
+.apparition * {
+	transition: opacity 1s;
+	animation: initial;
 }
-.invisible {
+.invisible * {
 	transition: 0s;
 	opacity: 0;
+	animation: none !important;
 }
 
 /* ========================== Version Téléphone ========================= */
@@ -134,7 +149,7 @@ address {
 	height: 175px;
 	display: block;
 	border-radius: 50%;
-	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 4px 4px 0 rgba(var(--special2), 0.2), 0 8px 8px 0 rgba(var(--special2), 0.15);
 	transform: translateY(-5px);
 	animation: photoProfilAnim 1s ease;
 }
@@ -358,7 +373,6 @@ address {
 	flex-direction: column;
 }
 #zoneContact h2 {
-	margin-left: 5%;
 	animation: copyPartAnim 2s ease;
 }
 #contentCopy {
@@ -435,12 +449,12 @@ address {
 #lienExterne a:hover .iconImg {
 	border-radius: 5px;
 	background-color: var(--color5);
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4), 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 2px 2px 0 rgba(var(--special2), 0.4), 0 4px 4px 0 rgba(var(--special2), 0.3);
 }
 #lienExterne a:active .iconImg, #lienExterne a:focus .iconImg{
 	border-radius: 5px;
 	background-color: var(--color5);
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4), 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 2px 2px 0 rgba(var(--special2), 0.4), 0 4px 4px 0 rgba(var(--special2), 0.3);
 }
 .iconImg {
 	padding: 5px;
@@ -467,13 +481,49 @@ address {
 	justify-content: space-between;
 }
 #zone3 h2 {
-	margin-left: 5%;
+	position: relative;
+	margin-top: 1%;
+	width: fit-content;
+	animation: titleCardAnim 2s ease;
+}
+#zone3 h2::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 100%;
+	right: 0;
+	width: 100vw;
+	height: 5px;
+	border-radius: 0 100% 0 100%;
+	background: linear-gradient(to right, var(--color1), var(--color5));
+	z-index: -1;
+	animation: noTitleBorderAnim 2s ease, titleBorderAnim 1.35s 2s ease;
 }
 #zone3 h3 {
 	margin: 25px 15% 10px 15%;
 	padding-bottom: 5px;
 	text-align: center;
-	border-bottom: 1px solid rgba(44, 62, 61, 0.3);
+	border-bottom: 1px solid rgba(var(--special2), 0.3);
+	animation: subTitleAnim 1s ease;
+}
+.together {
+	animation: togetherAnim 2s ease;
+}
+@keyframes noTitleBorderAnim {
+	from, to {
+		width: 0;
+	}
+}
+@keyframes titleBorderAnim {
+	from {
+		height: 0;
+	}
+}
+@keyframes togetherAnim {
+	from {
+		transform: rotate3d(1, 0, 0, 90deg);
+		opacity: 0;
+	}
 }
 /* ~~~~~~~~~~ Zone3 - Compétence ~~~~~~~~~~ */
 #zoneComp {
@@ -481,9 +531,6 @@ address {
 	flex-direction: column;
 	justify-content: center;
 	flex: 1;
-}
-#zoneComp h2 {
-	margin-top: 1%;
 }
 .defil {
 	display: flex;
@@ -502,6 +549,7 @@ address {
 	justify-content: center;
 	align-items: center;
 	transition: opacity 0.5s;
+	animation: waitTogetherAnim 2s ease, smallCardAnim 1.5s 1.8s ease;
 }
 .smallCard.hidden {
 	opacity: 0;
@@ -525,6 +573,12 @@ address {
 #cardHTML:hover > #iconHTML {
 	display: none;
 }
+@keyframes smallCardAnim {
+	from {
+		transform: rotate3d(1, 0, 0, 90deg);
+		opacity: 0;
+	}
+}
 /* ~~~~~~~~~~ Zone3 - Langue ~~~~~~~~~~ */
 #zoneLang {
 	display: flex;
@@ -540,24 +594,42 @@ address {
 	margin-left: 5%;
 	padding: 2px 10px 2px 0;
 	font-size: 1.2em;
+	animation: waitTogetherAnim 2s ease, titleLangAnim 1.5s 2s ease;
 }
 .progress-bar {
 	width: 200px;
 	height: 10px;
-	background-color: var(--color5);
-	box-shadow: 0 0 2px 0 rgba(44, 62, 61, 1);
+	background-color: #FFFFFF;
+	box-shadow: 0 0 2px 0 rgba(var(--special2), 1);
 	border-radius: 50px;
 	overflow: hidden;
+	animation: waitTogetherAnim 2s ease, progressBarAnim 1.5s 2s ease;
 }
 .progress {
 	height: 100%;
 	background-color: var(--color3);
 	position: relative;
-	animation: progressAnim 2s ease;
+	animation: waitTogetherAnim 2s ease, progressAnim 2s 2s ease;
+}
+@keyframes titleLangAnim {
+	from {
+		transform: rotate3d(1, 0, 0, 90deg);
+		opacity: 0;
+	}
+}
+@keyframes progressBarAnim {
+	from {
+		opacity: 0;
+	}
 }
 @keyframes progressAnim {
 	from {
 		width: 0%;
+	}
+}
+@keyframes waitTogetherAnim {
+	from, to {
+		opacity: 0;
 	}
 }
 /* ~~~~~~~~~~ Zone3 - Loisirs ~~~~~~~~~~ */
@@ -567,9 +639,10 @@ address {
 	justify-content: center;
 	align-items: center;
 	margin-bottom: calc(1% + 4px);
+	overflow: hidden;
 }
 .mCard {
-	margin: 8px;
+	margin: 12px 8px 8px 8px;
 	width: 150px;
 	height: 175px;
 	display: flex;
@@ -577,8 +650,9 @@ address {
 	justify-content: space-evenly;
 	align-items: center;
 	border-radius: 10px;
-	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 4px 4px 0 rgba(var(--special2), 0.2), 0 8px 8px 0 rgba(var(--special2), 0.15);
 	overflow: hidden;
+	animation: mCardAnim 2s ease;
 }
 .mCard:hover {
 	transform: scale(1.05);
@@ -594,19 +668,19 @@ address {
 	background-size: cover;
 }
 #gif1 {
-	background-image: url("../Windows\ pleine.jpg");
+	background-image: url("../images/Photo/photo_Windows_Pleine.jpg");
 }
 #gif2 {
-	background-image: url("https://www.lofficiel.net/img/guide_photo/2434355-circuit-vtt-n5-vert-foret-de-la-rousse-bois-de-valuisant-fiche.jpg");
+	background-image: url("../images/Photo/photo_Vélo.jpg");
 }
 #gif3 {
-	background-image: url("https://i.ytimg.com/vi/5qap5aO4i9A/maxresdefault.jpg");
+	background-image: url("../images/Photo/photo_Musique.jpg");
 }
 #gif4 {
-	background-image: url("https://laverdadnoticias.com/__export/1624749707442/sites/laverdad/img/2021/06/26/one_punch_man_se_va_de_netflix_2021.jpg_1835716012.jpg");
+	background-image: url("../images/Photo/photo_Maga.webp");
 }
 #gif4:hover {
-	background-image: url("https://media.tenor.com/6keig3NVMYYAAAAC/one-punch-man-ok.gif");
+	background-image: url("../images/Photo/gif_Manga.gif");
 }
 .mCard span {
 	width: 100%;
@@ -616,6 +690,16 @@ address {
 	font-family: "SpecialFont";
 	text-align: center;
 	background-color: var(--color2);
+}
+@keyframes titleCardAnim {
+	from {
+		transform: translateX(-150vw);
+	}
+}
+@keyframes mCardAnim {
+	from {
+		transform: translateX(-200%);
+	}
 }
 
 /* ~~~~~~~~~~ Copy ~~~~~~~~~~ */
@@ -665,7 +749,7 @@ address {
 #imgArrow:hover {
 	transform: scale(1.2, 0.7);
 	background-color: var(--color5);
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 2px 2px 0 rgba(var(--special2), 0.2), 0 4px 4px 0 rgba(var(--special2), 0.15);
 }
 #imgArrow:active, #imgArrow:focus {
 	transform: scale(1.1, 0.6);
@@ -724,9 +808,50 @@ address {
 		transform: translateX(1%);
 	}
 }
+/* ~~~~~~~~~~ Button Thème ~~~~~~~~~~ */
+#button-theme {
+	cursor: pointer;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	min-width: 3dvh;
+	width: 4vw;
+	height: 3dvh;
+	background-color: var(--color1);
+	display: none;
+	filter: var(--filterTheme);
+	background-image: var(--iconTheme);
+	background-position: var(--positionTheme);
+	background-repeat: no-repeat;
+	background-size: contain;
+	border-radius: 50px;
+	border: 2px solid rgba(var(--special2), 1);
+	transition: background-image 1s, background-position 1s, filter 1s;
+}
 
 /* ========================== Version Tablets ========================= */
 @media screen and (min-width: 765px) {
+	#mCard1 {
+		animation: mCard1Anim 2s ease;
+	}
+	#mCard4 {
+		animation: mCard4Anim 2s ease;
+	}
+	@keyframes mCard1Anim {
+		from {
+			transform: translateX(-200%);
+		}
+	}
+	@keyframes mCard4Anim {
+		from {
+			transform: translateX(200%);
+		}
+	}
+	@keyframes mCardAnim {
+		from {
+			transform: translateY(200%);
+		}
+	}
 }
 
 /* ========================== Version Ordinateur ========================= */
@@ -769,10 +894,6 @@ address {
 	}
 	#title h1 {
 		padding: 10px 20px;
-		font-size: ;
-	}
-	#subTitle {
-		font-size: ;
 	}
 	#backTitle {
 		width: calc(100vw - 20%);
@@ -811,5 +932,16 @@ address {
 			width: calc(100vw - 20%);
 			transform: translateX(0);
 		}
+	}
+
+
+
+	/* */
+	#zone3 h2::before {
+		height: 15px;
+	}
+	/*  */
+	.mCard {
+		margin: 25px 8px 8px 8px;
 	}
 }

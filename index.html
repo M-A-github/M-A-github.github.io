@@ -14,7 +14,7 @@
 
 	<body>
 		<main>
-			<section class="zone apparition" id="zone1">
+			<section class="zone" id="zone1">
 				<div id="zonePhotoProfil">
 					<div id="photoProfilBackground"></div>
 					<img id="photoProfil" draggable="false" src="images/photoProfil.png" alt="Photo de profil">
@@ -141,12 +141,14 @@
 						</div>
 						-->
 						<span><abbr title="Certificat d'Enseignement Secondaire Supérieur">CESS</abbr> & Electricien Automaticien & ElectroMecanicien</span>
-						Obtention :
-						<ul>
-							<li>Certificat d'enseignement secondaire supérieur (CESS) en juin 2019</li>
-							<li>Certificat de Qualification en Électricien Automaticien en juin 2019</li>
-							<li>Certificat d’étude secondaire du deuxième degré (CE2D) en juin 2017</li>
-						</ul>
+						<div>
+							<h4>Obtention :</h4>
+							<ul>
+								<li>Certificat d'enseignement secondaire supérieur (CESS) en juin 2019</li>
+								<li>Certificat de Qualification en Électricien Automaticien en juin 2019</li>
+								<li>Certificat d’étude secondaire du deuxième degré (CE2D) en juin 2017</li>
+							</ul>
+						</div>
 
 						<p>
 							Électricien Automaticien (2017-2019)<br>
@@ -155,9 +157,9 @@
 					</div>
 
 					<div class="formation apparition">
-						<span><abbr title="Certificat d'Études de Base">CEB</abbr> | Athénée Royal Marguerite Bervoets</span>
 						<h3>Athénée Royal Marguerite Bervoets Mons</h3>
 						<span class="date">2003-2012</span>
+						<span><abbr title="Certificat d'Études de Base">CEB</abbr> | Athénée Royal Marguerite Bervoets</span>
 						Obtention du Certificat d’étude de base (CEB)
 						<!--
 						<div class="zoneCopy">
@@ -198,12 +200,12 @@
 				</diV>
 			</section>
 
-			<section class="zone apparition" id="zone3">
-				<div id="zoneComp">
+			<section class="zone" id="zone3">
+				<div id="zoneComp" class="apparition">
 					<h2>Compétences</h2>
-					<div id="zoneLangProg" class="apparition">
+					<div id="zoneLangProg" class="together apparition">
 						<h3>Langage de Programmation</h3>
-						<div class="defil" id="defil1">
+						<div class="defil apparition" id="defil1">
 							<div class="smallCard">
 								<img src="./images/Python_icon.svg" draggable="false" alt="Icon language Python" class="iconComp">
 								<span>Python</span>
@@ -260,9 +262,13 @@
 						</div>
 					</div>
 						
-					<div id="zoneLogiciel" class="apparition">
+					<div id="zoneLogiciel" class="together apparition">
 						<h3>Logiciel</h3>
-						<div class="defil" id="defil2">
+						<div class="defil apparition" id="defil2">
+							<div class="smallCard">
+								<img src="./images/Office_icon.svg" draggable="false" alt="Icon language Logiciel suite office" class="iconComp">
+								<span>Logiciel suite office</span>
+							</div>
 							<div class="smallCard">
 								<img src="./images/Linux_icon.svg" draggable="false" alt="Icon language Linux" class="iconComp">
 								<span>Linux</span>
@@ -296,11 +302,11 @@
 								<span>Postman</span>
 							</div>
 							<div class="smallCard">
-								<img src="./images/Eagle_icon.svg" draggable="false" alt="Icon language Eagle" class="iconComp">
+								<img src="./images/Eagle_icon.webp" draggable="false" alt="Icon language Eagle" class="iconComp">
 								<span>Eagle</span>
 							</div>
 							<div class="smallCard">
-								<img src="./images/Multisim_icon.svg" draggable="false" alt="Icon language Multisim" class="iconComp">
+								<img src="./images/Multisim_icon.png" draggable="false" alt="Icon language Multisim" class="iconComp">
 								<span>Multisim</span>
 							</div>
 							<div class="smallCard">
@@ -312,33 +318,29 @@
 								<span>AutoCAD</span>
 							</div>
 							<div class="smallCard">
-								<img src="./images/Schemaplic_icon.svg" draggable="false" alt="Icon language Schémaplic" class="iconComp">
+								<img src="./images/Schemaplic_icon.png" draggable="false" alt="Icon language Schémaplic" class="iconComp">
 								<span>Schémaplic</span>
 							</div>
 							<div class="smallCard">
-								<img src="./images/ConnectCompWork_icon.svg" draggable="false" alt="Icon language Connected Components Workbench" class="iconComp">
+								<img src="./images/ConnectCompWork_icon.png" draggable="false" alt="Icon language Connected Components Workbench" class="iconComp">
 								<span>Connected Components Workbench</span>
 							</div>
 							<div class="smallCard">
-								<img src="./images/Trikker_icon.svg" draggable="false" alt="Icon language Trikker" class="iconComp">
+								<img src="./images/Trikker_icon.ico" draggable="false" alt="Icon language Trikker" class="iconComp">
 								<span>Trikker</span>
-							</div>
-							<div class="smallCard">
-								<img src="./images/Office_icon.svg" draggable="false" alt="Icon language Logiciel suite office" class="iconComp">
-								<span>Logiciel suite office</span>
 							</div>
 						</div>
 					</div>
 
-					<div id="zoneLang" class="apparition">
+					<div id="zoneLang" class="together apparition">
 						<h3>Langue</h3>
-						<div class="lang">
+						<div class="lang apparition">
 							<span class="titleLang">Français</span>
 							<div class="progress-bar">
 								<div class="progress" style="width: 95%;"></div>
 							</div>
 						</div>
-						<div class="lang">
+						<div class="lang apparition">
 							<span class="titleLang">Anglais</span>
 							<div class="progress-bar">
 								<div class="progress" style="width: 25%;"></div>
@@ -349,8 +351,8 @@
 
 				<div id="zoneLoisir" class="apparition">
 					<h2>Loisirs</h2>
-					<div id="contentCard">
-						<div class="mCard">
+					<div id="contentCard" class="apparition">
+						<div class="mCard" id="mCard1">
 							<div class="gif" id="gif1"></div>
 							<span>Photographie</span>
 						</div>
@@ -362,7 +364,7 @@
 							<div class="gif" id="gif3"></div>
 							<span>Musique</span>
 						</div>
-						<div class="mCard">
+						<div class="mCard" id="mCard4">
 							<div class="gif" id="gif4"></div>
 							<span>Manga</span>
 						</div>
@@ -377,9 +379,12 @@
 
 		<div id="loading-screen">
 			<div id="loader">Chargement..</div>
-		</div>		  
+		</div>
+		
+		<div id="button-theme"></div>
 
 		<script src="./scripts/jquery-3.3.1.min.js"></script>
+		<!--  -->
 		<script src="./scripts/script.js"></script>
 	</body>
 </html>

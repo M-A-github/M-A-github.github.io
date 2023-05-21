@@ -3,7 +3,6 @@ function copyText(element) {
 	navigator.clipboard.writeText($("#"+element).text());
 
 	// Crée une info bull
-	$("#contentPopup").remove();
 	let popup = $('<div id="contentPopup"><div id="popup">Copier !</div></div>');
 	$("body").append(popup);
 
@@ -64,6 +63,7 @@ function rotateArrow() {
 	if (scrollPosition === 0) {
 		$("#imgArrow").css("transform", "rotate(0deg) scale(1, 0.5)");
 		angleArrow = 0;
+		$(".apparition").addClass("invisible");
 	}
 	if(scrollPosition + windowHeight >= documentHeight - 100) {
 		$("#imgArrow").css("transform", "rotate(180deg) scale(1, 0.5)");
@@ -74,7 +74,7 @@ function rotateArrow() {
 // Fonction pour le LazyLoad
 function updateZone() {
 	$(".invisible").each(function() {
-		if($(window).scrollTop() + ($(window).height()*1) >= $(this).offset().top) {
+		if($(window).scrollTop() + ($(window).height()*0.85) >= $(this).offset().top) {
 			$(this).removeClass("invisible");
 		}
 	});
@@ -134,7 +134,7 @@ function defilCard(id) {
 	}, 1500);
 }
 
-
+// ---- Loader ----
 $("main").css("display", "none");
 $("#loading-screen").css("display", "flex");
 let container = $("#loading-screen").children();
@@ -148,7 +148,36 @@ var isAnimating = false;
 var angleArrow = 0;
 var posCard = Array(0, 0);
 var valDec = Array(-150, -150);
+var themeDark = false;
 $(window).on("load", () => {
+	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		themeDark = true;
+	} else {
+		themeDark = false;
+	}
+	$("#button-theme").css("display", "flex");
+	$("#button-theme").on("click", function() {
+		if(themeDark) {
+			$("body").css("--color1", "#2C3E3D");
+			$("body").css("--color5", "#FFFFFF");
+			$("body").css("--special1", "255, 255, 255");
+			$("body").css("--special2", "44, 62, 61");
+			themeDark = false;
+			$("body").css("--iconTheme", "url(../images/Moon_icon.svg)");
+			$("body").css("--positionTheme", "right");
+			$("body").css("--filterTheme", "invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg)");
+		} else {
+			$("body").css("--color1", "#FFFFFF");
+			$("body").css("--color5", "#2C3E3D");
+			$("body").css("--special1", "44, 62, 61");
+			$("body").css("--special2", "255, 255, 255");
+			themeDark = true;
+			$("body").css("--iconTheme", "url(../images/Sun_icon.svg)");
+			$("body").css("--positionTheme", "left");
+			$("body").css("--filterTheme", "initial");
+		}
+	});
+
 	$("main").css("display", "initial");
 	$("#loading-screen").remove();
 
