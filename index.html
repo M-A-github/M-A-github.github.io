@@ -17,7 +17,9 @@
 			<section class="zone" id="zone1">
 				<div id="zonePhotoProfil">
 					<div id="photoProfilBackground"></div>
-					<img id="photoProfil" draggable="false" src="images/photoProfil.png" alt="Photo de profil">
+					<div id="shadowPhotoProfil">
+						<img id="photoProfil" draggable="false" src="images/photoProfil.png" alt="Photo de profil">
+					</div>
 				</div>
 
 				<div id="textZone1">
@@ -80,7 +82,7 @@
 								<a href="https://github.com/MA-Visty" target="_blank">
 									<img class="iconImg" src="images/Github_icon.svg" alt="Lien vers Github">
 								</a>
-								<a href="./documents/Mahieu_Alexandre_CV.pdf" target="_blank">
+								<a href="./documents/Mahieu_Alexandre_CV.pdf" id="boutonPDF" target="_blank">
 									<img class="iconImg" src="images/PDF_icon.svg" alt="Télécharger le Curriculum Vitae en PDF">
 								</a>
 							</span>
@@ -356,11 +358,11 @@
 							<div class="gif" id="gif1"></div>
 							<span>Photographie</span>
 						</div>
-						<div class="mCard">
+						<div class="mCard" id="mCard2">
 							<div class="gif" id="gif2"></div>
 							<span>Vélo (VTT)</span>
 						</div>
-						<div class="mCard">
+						<div class="mCard" id="mCard3">
 							<div class="gif" id="gif3"></div>
 							<span>Musique</span>
 						</div>
@@ -381,7 +383,9 @@
 			<div id="loader">Chargement..</div>
 		</div>
 		
-		<div id="button-theme"></div>
+		<div id="zone-button-theme">
+			<div id="button-theme"></div>
+		</div>
 
 		<script src="./scripts/jquery-3.3.1.min.js"></script>
 		<!--  -->

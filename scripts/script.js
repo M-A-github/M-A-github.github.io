@@ -134,7 +134,7 @@ function defilCard(id) {
 	}, 1500);
 }
 
-// ---- Loader ----
+// Ecran de chargement
 $("main").css("display", "none");
 $("#loading-screen").css("display", "flex");
 let container = $("#loading-screen").children();
@@ -150,53 +150,67 @@ var posCard = Array(0, 0);
 var valDec = Array(-150, -150);
 var themeDark = false;
 $(window).on("load", () => {
-	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-		themeDark = true;
-	} else {
-		themeDark = false;
-	}
-	$("#button-theme").css("display", "flex");
-	$("#button-theme").on("click", function() {
-		if(themeDark) {
-			$("body").css("--color1", "#2C3E3D");
-			$("body").css("--color5", "#FFFFFF");
-			$("body").css("--special1", "255, 255, 255");
-			$("body").css("--special2", "44, 62, 61");
-			themeDark = false;
-			$("body").css("--iconTheme", "url(../images/Moon_icon.svg)");
-			$("body").css("--positionTheme", "right");
-			$("body").css("--filterTheme", "invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg)");
-		} else {
-			$("body").css("--color1", "#FFFFFF");
-			$("body").css("--color5", "#2C3E3D");
-			$("body").css("--special1", "44, 62, 61");
-			$("body").css("--special2", "255, 255, 255");
-			themeDark = true;
-			$("body").css("--iconTheme", "url(../images/Sun_icon.svg)");
-			$("body").css("--positionTheme", "left");
-			$("body").css("--filterTheme", "initial");
-		}
-	});
-
+	// Gestion de l'écran de chargement
 	$("main").css("display", "initial");
 	$("#loading-screen").remove();
 
+	// Calcule l'age est l'affiche
 	calculAge();
+	
+	// Gestion de la flèche de "navigation"
 	rotateArrow();
+
+	// Gestion de l'effet "Lazy-load"
 	$(".apparition").addClass("invisible");
 	updateZone();
 
+	// Gestion des zones de "carousel"
 	$(".defil").css("flex-flow", "row nowrap");
 	$(".defil").css("justify-content", "flex-start");
 	$(".defil").css("width", "1000%");
 	$(".defil").css("margin-left", "calc(50% - 75px)");
 	defilCard(1);
 	defilCard(2);
+
+	// Gestion du thème de couleur avec un bouton  /!\ défaut : en taille mobile à cause du fond, le bouton est souvent mal contrasté
+	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		themeDark = true;
+	} else {
+		themeDark = false;
+	}
+	$("#zone-button-theme").css("display", "flex");
+	$("#zone-button-theme").on("click", function() {
+		if(themeDark) {
+			$("body").css("--color1", "#2C3E3D");
+			$("body").css("--color5", "#FFFFFF");
+			$("body").css("--special1", "255, 255, 255");
+			$("body").css("--special2", "44, 62, 61");
+			themeDark = false;
+			$("body").css("--iconTheme", "url(../images/Sun_icon.svg)");
+			$("body").css("--positionTheme", "left");
+		} else {
+			$("body").css("--color1", "#FFFFFF");
+			$("body").css("--color5", "#2C3E3D");
+			$("body").css("--special1", "44, 62, 61");
+			$("body").css("--special2", "255, 255, 255");
+			themeDark = true;
+			$("body").css("--iconTheme", "url(../images/Moon_icon.svg)");
+			$("body").css("--positionTheme", "right");
+		}
+	});
+
+	// Pour imprimer le site avec un bouton  /!\ Bug après un appui : des fois écran rouge un court instant ; bordure de l'about ne disparaît pas contrairement au reste ..
+	$("#boutonPDF").click(function() {
+		window.print();
+	});
+	$("#boutonPDF").removeAttr('href');
 	
+	// Gestion du scroll
 	$(window).scroll(() => {
 		rotateArrow();
 		updateZone();
 	});
+	// Gestion du scroll sur écran tactile
 	$(window).on({
 		"touchmove": function(e) { 
 			rotateArrow();
