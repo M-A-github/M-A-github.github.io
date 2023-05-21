@@ -1,22 +1,98 @@
-
+/* Par Mahieu Alexandre */
 
 /* ============================== Impression ============================= */
 @media print {
-	body {
-		background-color: red;
-	}
-	a {
-		color: black;
-	}
-
 	* {
-		animation: unset !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		z-index: 0 !important;
+		animation: none !important;
+		transition: 0s !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+		box-shadow: none !important;
+	}
+	.zone {
+		width: initial !important;
+		min-height: initial !important;
+	}
+	#zonePhotoProfil {
+
+	}
+	#photoProfil {
+		height: 150px;
+	}
+	.defil {
+		margin-left: initial !important;
+		width: initial !important;
+		display: grid !important;
+		grid-template-columns: repeat(5, 1fr) !important;
+		grid-auto-rows: repeat(200px, auto) !important;
+	}
+	.smallCard {
+		margin: 0 !important;
+		min-width: initial !important;
+		max-width: initial !important;
+		min-height: initial !important;
+		max-height: initial !important;
 	}
 
-	.iconContact {
-		visibility: hidden;
+
+	#zoneLang {
+		flex-direction: row !important;
 	}
-	#contentPopup > *, #Arrow {
-		display: none;
+	#zoneLang h3 {
+		border: none !important;
+	}
+	#zoneLang h3::after {
+		margin: 0 5px !important;
+		content: ":";
+		height: 100%;
+		width: 5px;
+	}
+	.lang {
+		flex: 1 !important;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.titleLang {
+		margin: 0 5px !important;
+		width: 75px !important;
+	}
+	.progress-bar {
+		width: 150px !important;
+		height: 10px !important;
+		box-shadow: 0 0 2px 0 rgba(var(--special2), 1) !important;
+	}
+	.progress {
+		height: 100%;
+		background-color: var(--color3);
+		position: relative;
+		overflow: hidden;
+		animation: waitTogetherAnim 1.25s ease, progressAnim 2s 1.25s ease;
+	}
+
+	#zoneLoisir {
+		margin-top: 10px !important;
+	}
+	#contentCard {
+		display: flex !important;
+		flex-direction: row !important;
+		justify-content: space-evenly !important;
+		align-items: center !important;
+	}
+	.mCard {
+		width: initial !important;
+		height: initial !important;
+	}
+	.mCard span {
+		border-top: none !important;
+	}
+
+	#contentPopup, #zone-button-theme, #loading-screen, #arrow, #shadowPhotoProfil::before, #shadowPhotoProfil::after, #lienExterne,
+	.iconComp, .copyIcon, .progress::after, .gif {
+		display: none !important;
 	}
 }

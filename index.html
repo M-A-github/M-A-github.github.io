@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="description" content="Site du Curriculum Vitae de Mahieu Alexandre.">
-		<meta name="keywords" content="Curriculum Vitae, CV, Mahieu Alexandre">
+		<meta name="keywords" content="Curriculum Vitae, CV, Mahieu Alexandre, Informaticien, Développeur, Haute École en Hainaut, HEH, Électricien-Automaticien, Électricien, Électro-Mécanicien">
 		<meta name="author" content="Mahieu Alexandre">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<link rel="icon" type="image/png" href="images/logo.png">
@@ -96,8 +96,11 @@
 					<h2>Formations</h2>
 
 					<div class="formation apparition">
-						<h3>HEH 2021-2023</h3>
-						<span>Bachelier en informatique & Systèmes option développement | <abbr title="Haute École en Hainaut">HEH</abbr> - Département des Sciences et technologies</span>
+						<span class="nomFormation">
+							<h3>HEH</h3>
+							<span class="dateFormation">2021-2023</span>
+						</span>
+						<span class="infoFormation">Bachelier en informatique & Systèmes option développement | <abbr title="Haute École en Hainaut">HEH</abbr> - Département des Sciences et technologies</span>
 						<!--
 						<div class="zoneCopy">
 							<img class="iconContact" draggable="false" onclick="copyText('addressHEH')" src="./images/Map_icon.svg" alt="Icon localisation">
@@ -113,8 +116,12 @@
 					</div>
 					
 					<div class="formation apparition">
-						<h3>Formation à « Technocampus » :</h3>
-						<span>TechnoCampus - Mons</span>
+						<span class="nomFormation">
+							<h3>« Technocampus »</h3>
+							<span class="dateFormation">mai 2019</span>
+						</span>
+						
+						<span class="infoFormation">Formation en Instrumentation & Régulation</span>
 						<!--
 						<div class="zoneCopy">
 							<img class="iconContact" draggable="false" onclick="copyText('addressTechnoCampus')" src="./images/Map_icon.svg" alt="Icon localisation">
@@ -126,11 +133,13 @@
 							</sup>
 						</div>
 						-->
-						<p>Instrumentation/Régulation en mai 2019</p>
 					</div>
 
 					<div class="formation apparition">
-						<h3>Institut Technique Saint-Luc Mons 2012-2019</h3>
+						<span class="nomFormation">
+							<h3>Institut Technique Saint-Luc Mons</h3>
+							<span class="dateFormation">2012-2019</span>
+						</span>
 						<!--
 						<div class="zoneCopy">
 							<img class="iconContact" draggable="false" onclick="copyText('addressSaintLuc')" src="./images/Map_icon.svg" alt="Icon localisation">
@@ -159,8 +168,10 @@
 					</div>
 
 					<div class="formation apparition">
-						<h3>Athénée Royal Marguerite Bervoets Mons</h3>
-						<span class="date">2003-2012</span>
+						<span class="nomFormation">
+							<h3>Athénée Royal Marguerite Bervoets Mons</h3>
+							<span class="dateFormation">2003-2012</span>
+						</span>
 						<span><abbr title="Certificat d'Études de Base">CEB</abbr> | Athénée Royal Marguerite Bervoets</span>
 						Obtention du Certificat d’étude de base (CEB)
 						<!--
@@ -176,30 +187,42 @@
 						-->
 					</div>
 				</div>
-
-				<div id="zoneProfessionnel" class="apparition">
-					<h2>Parcours Professionnel<wbr>&nbsp;(Jobs&nbsp;étudiant)</h2>
-					<div class="job apparition">
-						<h3>Wallonie familles santé handicap : Secrétariat + Informatique</h3>
-						<span class="date">Juillet 2020 & 2021 & 2022</span>
-					</div>
-					<div class="job apparition">
-						<h3>Stage à l'ascenseur funiculaire de Strépy-Thieu</h3>
-						<span class="date">Mai 2019</span>
-					</div>
-					<div class="job apparition">
-						<h3>Holcim Obourg : Electricien + Laboratoire Béton</h3>
-						<span class="date">Juillet 2018 & 2019</span>
-					</div>
-					<div class="job apparition">
-						<h3>FAMIFED : Secrétariat + Manutention</h3>
-						<span class="date">Décembre 2017 & Juillet 2017</span>
-					</div>
-					<div class="job apparition">
-						<h3>SPF Santé Public : Secrétariat</h3>
-						<span class="date">Juillet 2016</span>
-					</div>
-				</diV>
+				
+				<div> <!-- A Supprimer (Juste la div, c'était pour pouvoir reduire la zone parce que celle en dessous ca marche pas ...) -->
+					<div id="zoneProfessionnel" class="apparition">
+						<h2>Parcours Professionnel</h2>
+						<span id="subTitleJob">( Jobs étudiant )</span>
+						<div class="job apparition">
+							<h3>Wallonie familles santé handicap</h3>
+							<span class="dateJob">Juillet 2020</span>
+							<span class="dateJob">Juillet 2021</span>
+							<span class="dateJob">Juillet 2020</span>
+							<span class="InfoJob">Secrétariat + Informatique</span>
+						</div>
+						<div class="job apparition">
+							<h3>Ascenseur funiculaire de Strépy-Thieu</h3>
+							<span class="dateJob">Mai 2019</span>
+							<span class="InfoJob">Stage</span>
+						</div>
+						<div class="job apparition">
+							<h3>Holcim Obourg</h3>
+							<span class="dateJob">Juillet 2018</span>
+							<span class="dateJob">Juillet 2019</span>
+							<span class="InfoJob">Electricien + Laboratoire Béton</span>
+						</div>
+						<div class="job apparition">
+							<h3>FAMIFED</h3>
+							<span class="dateJob">Décembre 2017</span>
+							<span class="dateJob">Juillet 2017</span>
+							<span class="InfoJob">Secrétariat + Manutention</span>
+						</div>
+						<div class="job apparition">
+							<h3>SPF Santé Public</h3>
+							<span class="dateJob">Juillet 2016</span>
+							<span class="InfoJob">Secrétariat</span>
+						</div>
+					</diV>
+				</div>
 			</section>
 
 			<section class="zone" id="zone3">
@@ -375,20 +398,21 @@
 			</section>
 			
 			<div id="arrow">
-				<img id="imgArrow" onclick="scrollArrow()" draggable="false" src="./images/Arrows_icon.svg" alt="Icon flêche">
+				<img id="imgArrow" draggable="false" src="./images/Arrows_icon.svg" alt="Icon flêche">
+			</div>
+
+			<div id="zone-button-theme">
+				<div id="button-theme"></div>
 			</div>
 		</main>
 
 		<div id="loading-screen">
 			<div id="loader">Chargement..</div>
 		</div>
-		
-		<div id="zone-button-theme">
-			<div id="button-theme"></div>
-		</div>
 
 		<script src="./scripts/jquery-3.3.1.min.js"></script>
 		<!--  -->
 		<script src="./scripts/script.js"></script>
+		
 	</body>
 </html>

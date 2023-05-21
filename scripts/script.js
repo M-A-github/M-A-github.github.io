@@ -46,7 +46,10 @@ function scrollArrow() {
 			isAnimating = false;
 		});
 	} else {
-		let pos = $(window).scrollTop() + $(window).height();
+		let pos = $("#zone3").offset().top + $("#zone3").height();
+		if(actuZone != 3) {
+			pos = $("#zone"+(actuZone+1)).offset().top;
+		}
 		$("html, body").animate({ "scrollTop": pos }, 250, () => {
 			isAnimating = false;
 		});
@@ -61,23 +64,35 @@ function rotateArrow() {
 	var documentHeight = $(document).height();
 	
 	if (scrollPosition === 0) {
-		$("#imgArrow").css("transform", "rotate(0deg) scale(1, 0.5)");
 		angleArrow = 0;
+		$("#imgArrow").css("transform", "rotate("+angleArrow+"deg) scale(1, 0.5)");
 		$(".apparition").addClass("invisible");
 	}
 	if(scrollPosition + windowHeight >= documentHeight - 100) {
-		$("#imgArrow").css("transform", "rotate(180deg) scale(1, 0.5)");
 		angleArrow = 180;
+		$("#imgArrow").css("transform", "rotate("+angleArrow+"deg) scale(1, 0.5)");
 	}
 }
 
 // Fonction pour le LazyLoad
 function updateZone() {
+	var scrollPosition = $(window).scrollTop();
+	var windowHeight = $(window).height();
+
 	$(".invisible").each(function() {
-		if($(window).scrollTop() + ($(window).height()*0.85) >= $(this).offset().top) {
+		if(scrollPosition + (windowHeight*0.85) >= $(this).offset().top) {
 			$(this).removeClass("invisible");
 		}
 	});
+
+	// Pour savoir où on se trouve
+	if(scrollPosition >= $("#zone1").offset().top && scrollPosition < $("#zone1").offset().top + ($("#zone1").height()*0.75)) {
+		actuZone = 1;
+	} else if(scrollPosition >= Math.floor($("#zone2").offset().top) && scrollPosition < $("#zone2").offset().top + ($("#zone2").height()*0.75)) {
+		actuZone = 2;
+	} else if(scrollPosition >= Math.floor($("#zone3").offset().top) && scrollPosition < $("#zone3").offset().top + ($("#zone3").height()*0.75)) {
+		actuZone = 3;
+	}
 }
 
 // Fonction pour afficher ou masquer les card dans le "carousel"
@@ -87,12 +102,6 @@ function checkCard(id) {
 		var distanceRight = $(window).width() - ($(this).offset().left + $(this).outerWidth());
 
 		var nbr = 2;
-		/* A faire -> pour le mobile moins d'élément sauf que ca bug ..
-		if ($(window).width() <= 768) {
-			nbr = 2;
-		}
-		*/
-
 		if(valDec[id-1] < 0) {
 			if(distanceLeft < ($(window).width() / 2) - ($(this).outerWidth(true) * nbr) || distanceRight < ($(window).width() / 2) - ($(this).outerWidth(true) * (nbr*2))) {
 				$(this).addClass("hidden");
@@ -149,6 +158,7 @@ var angleArrow = 0;
 var posCard = Array(0, 0);
 var valDec = Array(-150, -150);
 var themeDark = false;
+var actuZone = 1;
 $(window).on("load", () => {
 	// Gestion de l'écran de chargement
 	$("main").css("display", "initial");
@@ -158,6 +168,29 @@ $(window).on("load", () => {
 	calculAge();
 	
 	// Gestion de la flèche de "navigation"
+	$("#imgArrow").click(scrollArrow);
+	$("#imgArrow").css("cursor", "pointer");
+	$("#imgArrow").hover(function () {
+			$(this).css({
+				"background-color": "var(--color5)",
+				"box-shadow": "0 2px 2px 0 rgba(var(--special2), 0.2), 0 4px 4px 0 rgba(var(--special2), 0.15)",
+				"transform": "rotate("+angleArrow+"deg) scale(1.2, 0.7)"
+			});
+		}, function () {
+			$(this).css({
+				"background-color": "",
+				"box-shadow": "",
+				"transform": "rotate("+angleArrow+"deg) scale()"
+			});
+		}
+	);
+	$("#imgArrow").focus(function (e) { 
+		e.preventDefault();
+		$(this).css({
+			"transform": "rotate("+angleArrow+"deg) scale(1.1, 0.6)",
+			"opacity": 0.75
+		});
+	});
 	rotateArrow();
 
 	// Gestion de l'effet "Lazy-load"
@@ -165,10 +198,12 @@ $(window).on("load", () => {
 	updateZone();
 
 	// Gestion des zones de "carousel"
-	$(".defil").css("flex-flow", "row nowrap");
-	$(".defil").css("justify-content", "flex-start");
-	$(".defil").css("width", "1000%");
-	$(".defil").css("margin-left", "calc(50% - 75px)");
+	$(".defil").css({
+		"flex-flow": "row nowrap",
+		"justify-content": "flex-start",
+		"width": "1000%",
+		"margin-left": "calc(50% - 75px)"
+	});
 	defilCard(1);
 	defilCard(2);
 
@@ -181,25 +216,29 @@ $(window).on("load", () => {
 	$("#zone-button-theme").css("display", "flex");
 	$("#zone-button-theme").on("click", function() {
 		if(themeDark) {
-			$("body").css("--color1", "#2C3E3D");
-			$("body").css("--color5", "#FFFFFF");
-			$("body").css("--special1", "255, 255, 255");
-			$("body").css("--special2", "44, 62, 61");
+			$("body").css({
+				"--color1": "#2C3E3D",
+				"--color5": "#FFFFFF",
+				"--special1": "255, 255, 255",
+				"--special2": "44, 62, 61",
+				"--iconTheme": "url(../images/Sun_icon.svg)",
+				"--positionTheme": "left"
+			});
 			themeDark = false;
-			$("body").css("--iconTheme", "url(../images/Sun_icon.svg)");
-			$("body").css("--positionTheme", "left");
 		} else {
-			$("body").css("--color1", "#FFFFFF");
-			$("body").css("--color5", "#2C3E3D");
-			$("body").css("--special1", "44, 62, 61");
-			$("body").css("--special2", "255, 255, 255");
+			$("body").css({
+				"--color1": "#FFFFFF",
+				"--color5": "#2C3E3D",
+				"--special1": "44, 62, 61",
+				"--special2": "255, 255, 255",
+				"--iconTheme": "url(../images/Moon_icon.svg)",
+				"--positionTheme": "right"
+			});
 			themeDark = true;
-			$("body").css("--iconTheme", "url(../images/Moon_icon.svg)");
-			$("body").css("--positionTheme", "right");
 		}
 	});
 
-	// Pour imprimer le site avec un bouton  /!\ Bug après un appui : des fois écran rouge un court instant ; bordure de l'about ne disparaît pas contrairement au reste ..
+	// Pour imprimer le site avec un bouton  /!\ Bug après un appui : bordure de l'about ne disparaît pas contrairement au reste ..
 	$("#boutonPDF").click(function() {
 		window.print();
 	});
