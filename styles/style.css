@@ -9,6 +9,7 @@
 	--color5: #FFFFFF;
 	--special1: 255, 255, 255;
 	--special2: 44, 62, 61;
+	--special3: 248, 181, 0;
 
 	--iconTheme: url(../images/Sun_icon.svg);
 	--positionTheme: left;
@@ -34,23 +35,23 @@
 }
 @font-face{
 	font-family: "AgeFont";
-	src: url("font/Montserrat_Alternates/MontserratAlternates-Light.ttf");
+	src: url("font/MontserratAlternates-Light.ttf");
 }
 @font-face{
 	font-family: "SubTitleFont";
-	src: url("font/Montserrat_Alternates/MontserratAlternates-ExtraLight.ttf");
+	src: url("font/MontserratAlternates-ExtraLight.ttf");
 }
 @font-face{
 	font-family: "GlobalFont";
-	src: url("font/Montserrat_Alternates/MontserratAlternates-Regular.ttf");
+	src: url("font/MontserratAlternates-Regular.ttf");
 }
 @font-face{
 	font-family: "SpecialFont";
-	src: url("font/Montserrat_Alternates/MontserratAlternates-Black.ttf");
+	src: url("font/MontserratAlternates-Black.ttf");
 }
 @font-face{
 	font-family: "LinkFont";
-	src: url("font/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf");
+	src: url("font/MontserratAlternates-SemiBold.ttf");
 }
 @font-face{
 	font-family: "GlobalTitleFont";
@@ -497,6 +498,7 @@ address {
 }
 /* ~~~~~~~~~~ Zone1 - Lien Externe ~~~~~~~~~~ */
 #lienExterne {
+	position: relative;
 	margin-top: 1%;
 	padding: 5px 0px;
 	align-self: center;
@@ -540,16 +542,72 @@ address {
 	margin-top: 2%
 }
 /* ~~~~~~~~~~ Zone2 - Formation ~~~~~~~~~~ */
-#zoneFormations {
-	
-}
 .formation {
-
+	margin: 0 5% 0 10%;
+	padding: 5px;
 }
+.nomFormation {
+	max-width: 750px;
+	padding-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+.nomFormation h3 {
+	position: relative;
+}
+.nomFormation h3::before {
+	position: absolute;
+	content: "";
+	top: calc(50% - 5px);
+	left: -20px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: var(--color2);
+}
+.dateFormation {
+	padding: 5px;
+	width: 75px;
+	border-radius: 5px;
+	font-size: 1em;
+	text-align: center;
+	background-color: rgba(var(--special2), 0.15);
+}
+.infoSuppFormation li {
+	max-width: calc(750px - 2%);
+	margin-left: 2%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.smallDate {
+	margin: 1px;
+	padding: 2px;
+	width: 75px;
+	border-radius: 5px;
+	font-size: 0.85em;
+	font-family: "SubTitleFont";
+	text-align: center;
+	background-color: rgba(var(--special2), 0.15);
+}
+.nomDiplome {
+	position: relative;
+	padding: 2px 10px;
+	border-radius: 5px;
+	font-family: "SpecialFont";
+	font-size: 1.1em;
+	background-color: rgba(var(--special3), 0.55);
+}
+
 /* ~~~~~~~~~~ Zone2 - Job ~~~~~~~~~~ */
 #zoneProfessionnel {
 	display: flex;
 	flex-direction: column;
+}
+#subTitleJob {
+	margin-left: 15%;
 }
 .job {
 	display: flex;
@@ -557,8 +615,21 @@ address {
 	margin: 0 5% 0 10%;
 	padding: 5px;
 }
-#subTitleJob {
-	text-align: center;
+.job h3 {
+	position: relative;
+}
+.job h3::before {
+	position: absolute;
+	content: "";
+	top: calc(50% - 5px);
+	left: -20px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: var(--color2);
+}
+.dateJob {
+	color: rgba(var(--special2), 0.5);
 }
 
 /* ~~~~~~~~~~ Zone3 ~~~~~~~~~~ */
@@ -573,13 +644,13 @@ address {
 	width: fit-content;
 	animation: titleCardAnim 2s ease;
 }
-#zone3 h2::before {
+#zone3 h2::after {
 	content: "";
 	position: absolute;
 	left: 0;
 	top: 100%;
 	right: 0;
-	width: 100vw;
+	width: 90vw;
 	height: 5px;
 	border-radius: 0 100% 0 100%;
 	background: linear-gradient(to right, var(--color1), var(--color5));
@@ -993,7 +1064,7 @@ address {
 		height: 1.4em;
 	}
 	/* ~~~~~~~~~~ Zone 3 - Titre ~~~~~~~~~~ */
-	#zone3 h2::before {
+	#zone3 h2::after {
 		height: 15px;
 	}
 	#zone3 h3 {

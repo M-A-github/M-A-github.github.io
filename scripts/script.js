@@ -86,11 +86,11 @@ function updateZone() {
 	});
 
 	// Pour savoir où on se trouve
-	if(scrollPosition >= $("#zone1").offset().top && scrollPosition < $("#zone1").offset().top + ($("#zone1").height()*0.75)) {
+	if(Math.floor(scrollPosition*1.01) >= Math.floor($("#zone1").offset().top) && Math.floor(scrollPosition) < $("#zone1").offset().top + ($("#zone1").height()*0.75)) {
 		actuZone = 1;
-	} else if(scrollPosition >= Math.floor($("#zone2").offset().top) && scrollPosition < $("#zone2").offset().top + ($("#zone2").height()*0.75)) {
+	} else if(Math.floor(scrollPosition*1.01) >= Math.floor($("#zone2").offset().top) && Math.floor(scrollPosition) < Math.floor($("#zone2").offset().top + ($("#zone2").height()*0.75))) {
 		actuZone = 2;
-	} else if(scrollPosition >= Math.floor($("#zone3").offset().top) && scrollPosition < $("#zone3").offset().top + ($("#zone3").height()*0.75)) {
+	} else if(Math.floor(scrollPosition*1.01) >= Math.floor($("#zone3").offset().top) && Math.floor(scrollPosition) < Math.floor($("#zone3").offset().top + ($("#zone3").height()*0.75))) {
 		actuZone = 3;
 	}
 }

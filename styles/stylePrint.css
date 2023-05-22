@@ -3,13 +3,12 @@
 /* ============================== Impression ============================= */
 @media print {
 	* {
-		margin: 0 !important;
-		padding: 0 !important;
 		animation: none !important;
 		transition: 0s !important;
 		visibility: visible !important;
 		opacity: 1 !important;
 		box-shadow: none !important;
+		transform: none !important;
 	}
 	.zone {
 		width: initial !important;
@@ -17,6 +16,9 @@
 	}
 	#photoProfil {
 		height: 150px;
+	}
+	#zonePhotoProfil img {
+		border: 2px solid var(--color1);
 	}
 	.defil {
 		margin-left: initial !important;
@@ -32,25 +34,13 @@
 		min-height: initial !important;
 		max-height: initial !important;
 	}
-
-
-	#zoneLang {
-		flex-direction: row !important;
-	}
 	#zoneLang h3 {
 		border: none !important;
-	}
-	#zoneLang h3::after {
-		margin: 0 5px !important;
-		content: ":";
-		height: 100%;
-		width: 5px;
 	}
 	.lang {
 		flex: 1 !important;
 		display: flex;
 		flex-direction: row;
-		justify-content: flex-end;
 		align-items: center;
 	}
 	.titleLang {
@@ -62,14 +52,6 @@
 		height: 10px !important;
 		box-shadow: 0 0 2px 0 rgba(var(--special2), 1) !important;
 	}
-	.progress {
-		height: 100%;
-		background-color: var(--color3);
-		position: relative;
-		overflow: hidden;
-		animation: waitTogetherAnim 1.25s ease, progressAnim 2s 1.25s ease;
-	}
-
 	#zoneLoisir {
 		margin-top: 10px !important;
 	}
@@ -88,7 +70,7 @@
 	}
 
 	#contentPopup, #zone-button-theme, #loading-screen, #arrow, #shadowPhotoProfil::before, #shadowPhotoProfil::after, #lienExterne,
-	.iconComp, .copyIcon, .progress::after, .gif {
+	.iconComp, .copyIcon, .progress::after, .gif, .nomDiplome {
 		display: none !important;
 	}
 }
