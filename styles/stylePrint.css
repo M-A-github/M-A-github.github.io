@@ -25,7 +25,6 @@
 		width: initial !important;
 		display: grid !important;
 		grid-template-columns: repeat(5, 1fr) !important;
-		grid-auto-rows: repeat(200px, auto) !important;
 	}
 	.smallCard {
 		margin: 0 !important;
